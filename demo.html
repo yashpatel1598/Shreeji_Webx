@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- Import Sanchez font -->
+    <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
+    <style>
+        /* Default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #daecf3;
+        }
+
+        /* Navbar styling */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80%;
+            background-color: #daecf3;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5em;
+            height: 80px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        /* Logo styling */
+        #navbar .logo img {
+                height: 60%;
+                width: auto;
+                max-height: 160px;
+        }
+
+        #navbar a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .navbar-text {
+            margin-left: 1em;
+            text-transform: uppercase;
+            letter-spacing: 0.145em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .mail-icon {
+            height: 20px;
+            width: auto;
+            margin-left: 10px;
+        }
+
+        /* Side Navigation (Sidenav) */
+        .sidenav {
+            height: 100%;
+            width: 20%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #35A7A0;
+            overflow-x: hidden;
+            transition: 0.5s;
+            border-radius: 0px 0px 0px 20px;
+            padding-top: 80px;
+            /* Adjusted to match navbar height */
+        }
+
+        /* Side Navigation Links */
+        .sidenav a {
+            padding: 20px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 15px;
+            color: #ffffff;
+            display: block;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.145em;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Styling for the left-side text content */
+        .left-side-content {
+            position: absolute;
+            top: 25%;
+            left: 8%;
+            color: #000;
+            font-family: Arial, sans-serif;
+        }
+
+        .left-side-content h1 {
+            font-size: 2.5em;
+        }
+
+        /* Styles for Empowering, Brands, and Onlines */
+        .empowering-text,
+        .brands-text,
+        .onlines-text {
+            font-family: 'Sanchez';
+            font-size: 1.5em;
+            color: #35A7A0;
+            letter-spacing: 0.145em;
+            display: inline;
+            text-transform: uppercase;
+        }
+
+        .onlines-text {
+            color: black;
+        }
+
+        .your-success {
+            font-size: 1.2em;
+            color: #35A7A0;
+        }
+
+        .contact-btn {
+            background-color: #35A7A0;
+            color: white;
+            margin-top: 10px;
+            border-radius: 54px;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #2a8d8b;
+        }
+
+        /* Typewriter effect */
+        .typewriter-text {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: .1em solid black;
+            animation: typing 3s steps(30) infinite, blinkCaret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            0% {
+                width: 0;
+            }
+
+            80% {
+                width: 100%;
+            }
+        }
+
+        @keyframes blinkCaret {
+
+            0%,
+            80% {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: black;
+            }
+        }
+
+        /* Second Section (Centered Text) */
+        .second-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-family: 'Sanchez';
+            font-size: 2em;
+            color: #35A7A0;
+        }
+
+        /* Media Queries for screen sizes */
+        /* For screens 1024px or larger */
+        @media screen and (min-width: 1024px) {
+            #navbar {
+                width: 80%;
+            }
+
+            /* Hide the hamburger button for screen sizes >= 1024px */
+            .hamburger__toggle {
+                display: none;
+            }
+
+            /* Sidebar is always visible with fixed width of 20% */
+            .sidenav {
+                width: 20%;
+            }
+        }
+
+        /* For screens between 768px and 1024px */
+        @media screen and (max-width: 1024px) and (min-width: 768px) {
+            #navbar {
+                width: 80%;
+            }
+
+            /* Show the hamburger button on smaller screens */
+            .hamburger__toggle {
+                display: block;
+            }
+
+            /* Sidebar is initially hidden on smaller screens */
+            .sidenav {
+                width: 0;
+            }
+        }
+
+        /* For screens smaller than 768px */
+        @media screen and (max-width: 768px) {
+            #navbar {
+                width: 80%;
+            }
+
+            /* Show the hamburger button on smaller screens */
+            .hamburger__toggle {
+                display: block;
+            }
+
+            /* Sidebar is initially hidden on smaller screens */
+            .sidenav {
+                width: 0;
+            }
+        }
+
+        /* Hamburger button styling */
+        .hamburger__toggle {
+            display: none;
+            font-size: 36px;
+            background: transparent;
+            border: none;
+            color: #000;
+            cursor: pointer;
+            z-index: 1050;
+        }
+
+        /* For screens smaller than 768px */
+        @media screen and (max-width: 768px) {
+            .hamburger__toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <a href="index.html" class="logo">
+            <img src="assets/Shreeji Webex-01 3.png" alt="Carol Rocha">
+        </a>
+
+        <div class="d-flex align-items-center">
+            <span class="navbar-text">Get in Touch</span>
+            <img src="assets/mail.png" alt="Mail Icon" class="mail-icon">
+        </div>
+
+        <!-- Hamburger button for smaller screens -->
+        <button class="hamburger__toggle" onclick="toggleNav()">&#9776;</button>
+    </nav>
+
+    <!-- Left Side Content -->
+    <div class="left-side-content">
+        <!-- Row 1 -->
+        <h6>We Are Here</h6>
+
+        <!-- Row 2 -->
+        <div class="empowering-text typewriter-text">
+            Empowering <span>Brands</span>
+            <span>Onlines</span>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="your-success">
+            Your Success, <span>Our Mission</span>
+        </div>
+
+        <button class="contact-btn">Contact Us</button>
+    </div>
+
+    <!-- Second Section (Centered Text) -->
+    <div class="second-section">
+        <h2>Testion</h2>
+    </div>
+
+    <!-- Side Navigation (Sidenav) -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Meeting Booking</a>
+        <a href="#">Contact US</a>
+        <a href="#">Portfolios</a>
+    </div>
+
+    <!-- JavaScript for opening/closing sidenav and scroll functionality -->
+    <script>
+        // Open and close the sidenav
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "20%";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        // Toggle the sidenav when clicking the hamburger button
+        function toggleNav() {
+            const sidenav = document.getElementById("mySidenav");
+
+            if (sidenav.style.width === "20%") {
+                closeNav();
+            } else {
+                openNav();
+            }
+        }
+
+        // Toggle the visibility of the hamburger button on scroll
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 50) {
+                document.body.classList.add("scrolled");
+            } else {
+                document.body.classList.remove("scrolled");
+            }
+        });
+    </script>
+</body>
+
+</html>
