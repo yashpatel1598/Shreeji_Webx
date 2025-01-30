@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>E-Commerce Digital Marketing</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playball&display=swap"
+    rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
+
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .marketing-section {
+      display: flex;
+      flex-direction: column;
+      padding: 18px 0 31px;
+    }
+
+    .marketing-title {
+      color: rgba(0, 0, 0, 1);
+      text-align: center;
+      align-self: center;
+      margin-left: 36px;
+      width: 592px;
+      font: 600 40px Inter, sans-serif;
+    }
+
+    .content-wrapper {
+      background-color: rgba(53, 167, 160, 0.8);
+      margin-top: 68px;
+      width: 100%;
+      padding-left: 80px;
+    }
+
+    .content-container {
+      gap: 20px;
+      display: flex;
+    }
+
+    .text-column {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 66%;
+      margin-left: 0;
+    }
+
+    .marketing-description {
+      color: rgba(255, 255, 255, 1);
+      z-index: 10;
+      margin-top: 41px;
+      font: 400 25px Inter, sans-serif;
+    }
+
+    .image-column {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 34%;
+      margin-left: 20px;
+    }
+
+    .marketing-image {
+
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      margin-top: -182px;
+    }
+
+    @media (max-width: 991px) {
+      .marketing-title {
+        max-width: 100%;
+      }
+
+      .content-wrapper {
+        max-width: 100%;
+        padding-left: 20px;
+        margin-top: 40px;
+      }
+
+      .content-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .text-column {
+        width: 100%;
+      }
+
+      .marketing-description {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+
+      .image-column {
+        width: 100%;
+      }
+
+      .marketing-image {
+        max-width: 100%;
+        margin-top: -83px;
+      }
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .visually-hidden {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    .section-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 1311px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .category-tag {
+      display: flex;
+      align-items: center;
+      gap: 41px;
+      background: rgba(180, 216, 228, 1);
+      border: 2px solid rgba(53, 167, 160, 1);
+      border-radius: 51px;
+      padding: 29px 46px;
+      margin-bottom: 125px;
+    }
+
+    .category-indicator {
+      width: 17px;
+      height: 16px;
+      background: rgba(53, 167, 160, 1);
+      border-radius: 50%;
+    }
+
+    .category-label {
+      color: #fff;
+      font: 800 24px/1 "Inter", sans-serif;
+    }
+
+    .content-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 235px;
+      width: 100%;
+    }
+
+    .featured-image {
+      width: 786px;
+      height: 412px;
+      overflow: hidden;
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .content-row--reverse {
+      flex-direction: row-reverse;
+    }
+
+    .content-text {
+      width: 37%;
+      letter-spacing: 1px;
+      color: rgba(0, 0, 0, 1);
+      padding-top: 50px;
+      font: 20px/28px "Sanchez", serif;
+    }
+
+    .content-image-wrapper {
+      width: 63%;
+    }
+
+    @media (max-width: 991px) {
+      .section-wrapper {
+        padding: 15px;
+      }
+
+      .category-tag {
+        margin-bottom: 40px;
+        padding: 20px;
+        gap: 20px;
+        white-space: normal;
+      }
+
+      .content-grid {
+        gap: 40px;
+      }
+
+      .featured-image {
+        width: 100%;
+      }
+
+      .content-row,
+      .content-row--reverse {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .content-text {
+        width: 100%;
+      }
+
+      .content-image-wrapper {
+        width: 100%;
+      }
+    }
+
+    body {
+      height: 100vh;
+      margin: 0;
+
+      cursor: none;
+      overflow: auto;
+      
+    }
+
+    .cursor-dot {
+      width: 8px;
+      height: 8px;
+      background-color: black;
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      
+      z-index: 1000;
+      transition: transform 0.1s ease-out;
+    }
+
+    .cursor-outline {
+      width: 30px;
+      height: 30px;
+      border: 2px solid hsla(0, 26%, 5%, 0.5);
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+     
+      z-index: 999;
+      transition: all 0.2s ease-out;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+  <script>
+    const cursorDot = document.querySelector(".cursor-dot");
+    const cursorOutline = document.querySelector(".cursor-outline");
+
+    window.addEventListener("mousemove", function (e) {
+      const posX = e.clientX;
+      const posY = e.clientY;
+      cursorDot.style.left = `${posX}px`;
+      cursorDot.style.top = `${posY}px`;
+
+      
+      cursorOutline.style.left = `${posX}px`;
+      cursorOutline.style.top = `${posY}px`;
+    });
+  </script>
+ 
+  <div id="spinner"
+    class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+    <div class="spinner-grow text-primary" role="status"></div>
+  </div>
+  
+
+  
+  <div class="container-fluid nav-bar">
+    <div class="container">
+      <nav class="navbar navbar-light navbar-expand-lg py-4">
+        <a href="index.html" class="navbar-brand">
+          <img src="img/Shreeji Webex-01.png" alt="" style="max-height: 100px;">
+        </a>
+        <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse">
+          <span class="fa fa-bars text-primary"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav mx-auto">
+            <a href="index.html" class="nav-item nav-link ">Home</a>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Services</a>
+              <div class="dropdown-menu bg-light">
+                <a href="Digital_marketing.html" class="dropdown-item ">Digital Marketing</a>
+                <a href="landingpage.html" class="dropdown-item ">Website Landing Page</a>
+                <a href="Social_media_management.html" class="dropdown-item">Social Media Management</a>
+                <a href="SEO.html" class="dropdown-item">SEO</a>
+                <a href="E-Commerce.html" class="dropdown-item active">E-Commerce Digital Marketing</a>
+
+              </div>
+            </div>
+            <a href="book.html" class="nav-item nav-link">Meeting Booking</a>
+
+
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+          </div>
+          <button class="btn-search btn btn-primary btn-md-square me-4 rounded-circle d-none d-lg-inline-flex"
+            data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
+          <a href="" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill">Contact Now</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex align-items-center">
+          <div class="input-group w-75 mx-auto d-flex">
+            <input type="search" class="form-control bg-transparent p-3" placeholder="keywords"
+              aria-describedby="search-icon-1">
+            <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid  py-6 my-6 mt-0" style="background-color: #C8ECFA;">
+    <div class="container text-center animated bounceInDown">
+      <h1 class="display-1 mb-4">E-Commerce Digital Marketing </h1>
+      <ol class="breadcrumb justify-content-center mb-0 animated bounceInDown">
+        <li class="breadcrumb-item"><a href="#" style="color: #35A7A0;">Home</a></li>
+        <li class="breadcrumb-item"><a href="#" style="color: #35A7A0;">Services</a></li>
+        <li class="breadcrumb-item text-dark" aria-current="page">E-Commerce Digital Marketing</li>
+      </ol>
+    </div>
+  </div>
+  
+  <div class="marketing-section">
+    <h1 class="marketing-title">We provide E-Commerce Digital Marketing</h1>
+    <div class="content-wrapper">
+      <div class="content-container">
+        <div class="text-column">
+          <p class="marketing-description">
+            Join us on the journey to digital success. Let Shreeji Webex be the catalyst for your online
+            transformation and business growth. Together, we can turn your vision into reality and achieve
+            remarkable results in the digital world.
+          </p>
+        </div>
+        <div class="image-column">
+          <img loading="lazy" src="img/Untitled design (9).png" class="marketing-image"
+            alt="E-commerce digital marketing illustration" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section-wrapper">
+    <div class="category-tag" role="banner">
+      <div class="category-indicator" aria-hidden="true"></div>
+      <div class="category-label">Category</div>
+      <div class="category-indicator" aria-hidden="true"></div>
+    </div>
+
+    <div class="content-grid">
+      <div class="featured-image">
+        <img src="https://placehold.co/786x412/35A7A0/35A7A0" alt="Desert landscape with people" class="image" />
+      </div>
+
+      <div class="content-row">
+        <div class="content-text">
+          Utilize Facebook, Instagram, and Google to expand your audience, create
+          freshleads, and convert more clients. - Facebook and Google ads are 100%
+          worth it. In fact, some businesses may need to allocate resources
+          towards well-structuredcampaigns with high-quality creatives to
+          distinguish themselves from competitors.
+        </div>
+        <div class="content-image-wrapper">
+          <img src="https://placehold.co/786x412/35A7A0/35A7A0" alt="Desert landscape with people" class="image" />
+        </div>
+      </div>
+
+      <div class="content-row content-row--reverse">
+        <div class="content-image-wrapper">
+          <img src="https://placehold.co/786x412/35A7A0/35A7A0" alt="Desert landscape with people" class="image" />
+        </div>
+        <div class="content-text">
+          Utilize Facebook, Instagram, and Google to expand your audience, create
+          freshleads, and convert more clients. - Facebook and Google ads are 100%
+          worth it. In fact, some businesses may need to allocate resources
+          towards well-structuredcampaigns with high-quality creatives to
+          distinguish themselves from competitors.
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid footer py-6 my-6 mb-0 wow bounceInUp" data-wow-delay="0.1s"
+    style="background-color: #35A7A0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-item">
+            <h4 class="" style="color: white; text-transform: uppercase; letter-spacing: 5px;">Shreeji<span
+                class="text-dark">webEx</span></h4>
+            <p class="lh-lg  mb-4" style="color: white;">There cursus massa at urnaaculis estieSed
+              aliquamellus
+              vitae ultrs condmentum leo massamollis its estiegittis miristum.</p>
+
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-item">
+            <h4 class="mb-4">Special Facilities</h4>
+            <div class="d-flex flex-column align-items-start">
+              <a class=" mb-3" href="" style="color: white;"><i class="fa fa-check  me-2"
+                  style="color: white;"></i>Home</a>
+              <a class=" mb-3" href="" style="color: white;"><i class="fa fa-check me-2"
+                  style="color: white;"></i>Home</a>
+              <a class=" mb-3" href="" style="color: white;"><i class="fa fa-check  me-2"
+                  style="color: white;"></i>Home</a>
+              <a class=" mb-3" href="" style="color: white;"><i class="fa fa-check  me-2"
+                  style="color: white;"></i>Home</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-item">
+            <h4 class="mb-4">Contact Us</h4>
+            <div class="d-flex flex-column align-items-start">
+              <p style="color: white;"><i class="fa fa-map-marker-alt  me-2" style="color: white;"></i>
+                123
+                Street, New York, USA</p>
+              <p style="color: white;"><i class="fa fa-phone-alt  me-2" style="color: white;"></i> (+012)
+                3456
+                7890 123</p>
+              <p style="color: white;"><i class="fas fa-envelope  me-2" style="color: white;"></i>
+                info@example.com</p>
+              <p style="color: white;"><i class="fa fa-clock  me-2" style="color: white;"></i> 26/7 Hours
+                Service</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-item">
+            <h4 class="mb-4">Social Media</h4>
+            <div class="row g-2">
+              <div class="footer-icon d-flex">
+
+                <a class="btn  btn-sm-square me-2 rounded-circle" href="" style="background-color: white;"><i
+                    class="fab fa-twitter"></i></a>
+                <a href="#" class="btn  btn-sm-square me-2 rounded-circle" style="background-color: white;"><i
+                    class="fab fa-instagram"></i></a>
+                <a href="#" class="btn btn-sm-square rounded-circle" style="background-color: white;"><i
+                    class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="container-fluid copyright bg-dark py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site
+              Name</a>, Copyright by @SHREEJI WEBEX | All Right Reserved </span>
+        </div>
+        <div class="col-md-6 my-auto text-center text-md-end text-white">
+          
+          Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a
+            class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <a href="#" class="btn btn-md-square btn-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
