@@ -406,7 +406,7 @@
 .sidebar {
     width: 300px;
     background-color: var(--primary-color);
-    height: 70vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     padding: 40px;
@@ -606,6 +606,244 @@
     transform: translateX(100%); /* Hide sidebar when not in view */
 }
 
+
+
+
+
+.contact-us-wrapper {
+    display: flex;
+    justify-content: center; /* Center the circle horizontally */
+    align-items: center;
+    margin-top: 20px; /* Optional, to give space between the rows */
+}
+
+.contact-us-circle {
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Vertically center text */
+    justify-content: center; /* Horizontally center text */
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    color: #35A7A0;
+    border: 2px solid #35A7A0;
+    border-radius: 50%;
+    font-size: 14px; /* Adjusted font size for better fit */
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-us-circle span {
+    display: block;
+    font-size: 12px; /* Adjust font size as needed */
+}
+
+.contact-us-circle:hover {
+    background-color: #35A7A0;
+    color: #fff;
+    transform: scale(1.1);  /* Slowly grow the size */
+}
+
+.contact-us-circle:hover span {
+    color: #fff; /* Change text color on hover */
+}
+
+
+/* Container for both columns */
+.container-contact {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    padding: 20px;
+    width: 100%; /* Ensure it takes up full width */
+}
+
+/* Left Column */
+.left-column-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Align text to the left */
+    margin-right: 300px; /* Small gap between text and circle */
+}
+
+/* Right Column */
+.right-column-contact {
+    display: flex;
+    justify-content: center; /* Center the circle horizontally */
+    align-items: center; /* Center the circle vertically */
+    margin-left: 0; /* Ensure no margin to the left */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .container-contact {
+        flex-direction: column; /* Stack columns vertically on small screens */
+        justify-content: center; /* Ensure both elements are still centered */
+        align-items: center; /* Center both elements */
+    }
+
+    .left-column-contact,
+    .right-column-contact {
+        margin-right: 0; /* Remove margin to make sure there is no extra space */
+        margin-bottom: 10px; /* Add space between the text and circle */
+    }
+
+    .left-column-contact {
+        text-align: center; /* Center the text horizontally on small screens */
+    }
+
+    .right-column-contact {
+        margin-top: 10px; /* Optional: Add margin between text and circle when stacked */
+    }
+}
+
+
+
+.faq-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.faq-content {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #fff;
+   
+    padding: 20px;
+    justify-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+/* Left Side */
+.left-side {
+    flex: 1;
+    padding: 20px;
+   
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.left-side h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    
+}
+
+.left-side p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Right Side (FAQ Questions) */
+.right-side {
+    padding: 20px;
+    margin-left: 20px; /* Adds space between the left and right side */
+    flex: 2; /* Takes up more space than the left side */
+}
+
+/* FAQ Item Styling */
+.faq-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+    font-size: 1.2em;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #f9f9f9;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    content: '-';
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 10px;
+}
+
+.faq-answer.open {
+    max-height: 200px;
+    padding: 10px;
+}
+
+
+
+/* Media Query for Small Screens (Responsive Design) */
+@media (max-width: 768px) {
+    .faq-content {
+        flex-direction: column; /* Stack the sections vertically */
+        padding: 10px;
+    }
+
+    .left-side {
+        text-align: center;
+        margin-bottom: 20px; /* Space between left side and FAQ section */
+    }
+
+    .right-side {
+        margin-left: 0; /* Remove the margin between the sections */
+        margin-top: 20px; /* Add space above the FAQ section */
+        padding: 10px;
+    }
+
+    .faq-question {
+        font-size: 1.1em; /* Slightly smaller font size on mobile */
+    }
+
+    .faq-answer {
+        font-size: 1em; /* Adjust font size for better readability on mobile */
+    }
+}
+
+
+.sub-services {
+        display: none; /* Initially hidden */
+        padding-left: 15px;
+        background-color: #35A7A0; /* White background when expanded */
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .sidebar-sub-link {
+        display: flex; /* Flexbox for proper alignment */
+        align-items: center;
+        color: white; /* Text color inside sub-menu */
+        padding: 5px 0;
+        text-decoration: none;
+    }
+
+    .plus {
+        margin-right: 8px; /* Space between "+" and text */
+        font-weight: bold;
+        color: white;
+    }
+
+    .sidebar-sub-link:hover {
+        text-decoration: underline;
+    }
   </style>
 </head>
 
@@ -662,28 +900,39 @@
     </div>
 
     <aside class="sidebar">
-      <nav class="sidebar-nav" role="navigation" aria-label="Secondary navigation">
-        <!-- Home link -->
-        <a href="index.html" class="sidebar-link">Home</a>
-
-        <!-- Dropdown for Services -->
-        <div class="nav-item dropdown">
-          <a href="#" class="sidebar-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-          <div class="dropdown-menu bg-light">
-            <a href="Digital_marketing.html" class="dropdown-item">Digital Marketing</a>
-            <a href="landingpage.html" class="dropdown-item">Website Landing Page</a>
-            <a href="Social_media_management.html" class="dropdown-item">Social Media Management</a>
-            <a href="SEO.html" class="dropdown-item">SEO</a>
-            <a href="E-Commerce.html" class="dropdown-item">E-Commerce Digital Marketing</a>
-          </div>
+     <nav class="sidebar-nav" role="navigation" aria-label="Secondary navigation">
+      <!-- Home link -->
+      <a href="index.html" class="sidebar-link">Home</a>
+    
+      <!-- Services Section (Expandable) -->
+      <div class="nav-item">
+        <a href="#" class="sidebar-link" id="servicesToggle">Services</a>
+        <div class="sub-services" id="servicesDropdown">
+          <a href="Digital_marketing.html" class="sidebar-sub-link"><span class="plus">+</span> Digital Marketing</a>
+          <a href="landingpage.html" class="sidebar-sub-link"><span class="plus">+</span> Website Landing Page</a>
+          <a href="Social_media_management.html" class="sidebar-sub-link"><span class="plus">+</span> Social Media
+            Management</a>
+          <a href="SEO.html" class="sidebar-sub-link"><span class="plus">+</span> SEO</a>
+          <a href="E-Commerce.html" class="sidebar-sub-link"><span class="plus">+</span> E-Commerce Digital
+            Marketing</a>
         </div>
+      </div>
+    
+      <!-- Meeting Booking link -->
+      <a href="book.html" class="sidebar-link active">Meeting Booking</a>
+    
+      <!-- Contact link -->
+      <a href="contact.html" class="sidebar-link">Contact</a>
+    </nav>
+    
+    <script>
+      document.getElementById("servicesToggle").addEventListener("click", function (event) {
+        event.preventDefault(); // Prevents jumping to top
+        var dropdown = document.getElementById("servicesDropdown");
+        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+      });
+    </script>
 
-        <!-- Meeting Booking link -->
-        <a href="book.html" class="sidebar-link active">Meeting Booking</a>
-
-        <!-- Contact link -->
-        <a href="contact.html" class="sidebar-link">Contact</a>
-      </nav>
     </aside>
   </main>
 </div>
@@ -812,7 +1061,122 @@
     </div>
   </div>
   
-<div class="container-fluid footer py-6 my-6 mb-0 wow bounceInUp" data-wow-delay="0.1s"
+
+
+<div class="text-center  wow bounceInUp" style="margin-top: 50px;" data-wow-delay="0.1s">
+  <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border rounded-pill px-4 py-1 mb-3"
+    style="border-color: #35A7A0;">Contact Us</small>
+</div>
+
+<div class="container-contact">
+  <!-- Left Column -->
+
+  <div class="left-column-contact wow bounceInUp" data-wow-delay="0.1s">
+    <h2 style="font-size: 40px;">Have a project in mind?</h2>
+    <h3 style="font-size: 20px;"> Let’s get to work</h3>
+  </div>
+
+  <!-- Right Column -->
+  <div class="right-column-contact">
+    <div class="contact-us-wrapper">
+    <a href="contact.html"> <!-- Link to index.html -->
+      <div class="contact-us-circle wow bounceInUp" data-wow-delay="0.1s">
+        <span>Contact Us</span>
+      </div>
+    </a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<h5 style="text-align: center; padding: 10% 30% 0px 30%;">Explore Corenet Tech’s FAQ on consulting, development,
+  marketing, and more. Unravel the mysteries of IT and make your
+  journey fast-forward.</h5>
+
+<div class="faq-container">
+
+  <div class="faq-content">
+
+    <div class="left-side wow bounceInUp" data-wow-delay="0.1s">
+      <div class="text-center  wow bounceInUp" style="margin-top: 50px;" data-wow-delay="0.1s">
+        <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border rounded-pill px-4 py-1 mb-3"
+          style="border-color: #35A7A0;">FAQs</small>
+      </div>
+
+      <h1>Fast-Track Help</h1>
+      <h1>Desk</h1>
+    </div>
+    <div class="right-side wow bounceInUp" data-wow-delay="0.1s">
+      <div class="faq-item ">
+        <div class="faq-question">What is e-commerce digital marketing?</div>
+        <div class="faq-answer">E-commerce digital marketing refers to the use of online marketing strategies and tactics to promote and sell products
+        or services through an e-commerce website. This includes various activities like search engine optimization (SEO),
+        social media marketing, email marketing, paid advertising, content marketing, and influencer collaborations.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How can digital marketing boost my e-commerce sales?</div>
+        <div class="faq-answer">Digital marketing can boost e-commerce sales by driving targeted traffic to your website and turning those visitors into
+        paying customers. Strategies like SEO can help your products rank higher in search engine results, while social media
+        marketing can increase brand awareness and engage potential customers.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do social media platforms help e-commerce businesses?</div>
+        <div class="faq-answer">Social media platforms play a crucial role in e-commerce digital marketing by providing businesses with a way to engage
+        with potential customers, build brand loyalty, and drive traffic to their online store. Platforms like Instagram,
+        Facebook, and TikTok allow businesses to showcase products, run targeted ads, and interact directly with their audience.
+        Social media is also an excellent tool for influencer marketing, where businesses collaborate with influencers to
+        promote their products to a broader audience.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What role does email marketing play in e-commerce?</div>
+        <div class="faq-answer">Email marketing plays a vital role in e-commerce by enabling businesses to nurture leads, build relationships with
+        customers, and encourage repeat purchases. With email campaigns, you can send personalized promotions, product
+        recommendations, and special offers to subscribers, which can help increase conversions and customer loyalty.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I measure the effectiveness of my e-commerce digital marketing campaigns?</div>
+        <div class="faq-answer">The effectiveness of your e-commerce digital marketing campaigns can be measured using several key performance
+        indicators (KPIs). Common metrics include conversion rate, which measures the percentage of visitors who make a
+        purchase, and traffic sources, which show where your website visitors are coming from (e.g., organic search, paid ads,
+        social media). Return on Investment (ROI) is another important metric to assess the profitability of your campaigns</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', function () {
+        const answer = this.nextElementSibling;
+        const isOpen = answer.classList.contains('open');
+
+        // Close all answers
+        document.querySelectorAll('.faq-answer').forEach(ans => {
+          ans.classList.remove('open');
+        });
+
+        // Remove active class from all questions
+        document.querySelectorAll('.faq-question').forEach(q => {
+          q.classList.remove('active');
+        });
+
+        // Toggle the clicked question
+        if (!isOpen) {
+          answer.classList.add('open');
+          this.classList.add('active');
+        }
+      });
+    });
+  });
+</script>
+
+
+<div class="container-fluid footer py-5 my-6 mb-0 wow bounceInUp" data-wow-delay="0.1s"
   style="background-color: #35A7A0;">
   <div class="container">
     <div class="row d-flex justify-content-between">

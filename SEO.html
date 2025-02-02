@@ -414,7 +414,7 @@
 .sidebar {
     width: 300px;
     background-color: var(--primary-color);
-    height: 70vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     padding: 40px;
@@ -613,6 +613,243 @@
 .sidebar.hidden {
     transform: translateX(100%); /* Hide sidebar when not in view */
 }
+
+
+
+.contact-us-wrapper {
+    display: flex;
+    justify-content: center; /* Center the circle horizontally */
+    align-items: center;
+    margin-top: 20px; /* Optional, to give space between the rows */
+}
+
+.contact-us-circle {
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Vertically center text */
+    justify-content: center; /* Horizontally center text */
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    color: #35A7A0;
+    border: 2px solid #35A7A0;
+    border-radius: 50%;
+    font-size: 14px; /* Adjusted font size for better fit */
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-us-circle span {
+    display: block;
+    font-size: 12px; /* Adjust font size as needed */
+}
+
+.contact-us-circle:hover {
+    background-color: #35A7A0;
+    color: #fff;
+    transform: scale(1.1);  /* Slowly grow the size */
+}
+
+.contact-us-circle:hover span {
+    color: #fff; /* Change text color on hover */
+}
+
+
+/* Container for both columns */
+.container-contact {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    padding: 20px;
+    width: 100%; /* Ensure it takes up full width */
+}
+
+/* Left Column */
+.left-column-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Align text to the left */
+    margin-right: 300px; /* Small gap between text and circle */
+}
+
+/* Right Column */
+.right-column-contact {
+    display: flex;
+    justify-content: center; /* Center the circle horizontally */
+    align-items: center; /* Center the circle vertically */
+    margin-left: 0; /* Ensure no margin to the left */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .container-contact {
+        flex-direction: column; /* Stack columns vertically on small screens */
+        justify-content: center; /* Ensure both elements are still centered */
+        align-items: center; /* Center both elements */
+    }
+
+    .left-column-contact,
+    .right-column-contact {
+        margin-right: 0; /* Remove margin to make sure there is no extra space */
+        margin-bottom: 10px; /* Add space between the text and circle */
+    }
+
+    .left-column-contact {
+        text-align: center; /* Center the text horizontally on small screens */
+    }
+
+    .right-column-contact {
+        margin-top: 10px; /* Optional: Add margin between text and circle when stacked */
+    }
+}
+
+
+
+.faq-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.faq-content {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #fff;
+   
+    padding: 20px;
+    justify-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+/* Left Side */
+.left-side {
+    flex: 1;
+    padding: 20px;
+   
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.left-side h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    
+}
+
+.left-side p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Right Side (FAQ Questions) */
+.right-side {
+    padding: 20px;
+    margin-left: 20px; /* Adds space between the left and right side */
+    flex: 2; /* Takes up more space than the left side */
+}
+
+/* FAQ Item Styling */
+.faq-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+    font-size: 1.2em;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #f9f9f9;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    content: '-';
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 10px;
+}
+
+.faq-answer.open {
+    max-height: 200px;
+    padding: 10px;
+}
+
+
+
+/* Media Query for Small Screens (Responsive Design) */
+@media (max-width: 768px) {
+    .faq-content {
+        flex-direction: column; /* Stack the sections vertically */
+        padding: 10px;
+    }
+
+    .left-side {
+        text-align: center;
+        margin-bottom: 20px; /* Space between left side and FAQ section */
+    }
+
+    .right-side {
+        margin-left: 0; /* Remove the margin between the sections */
+        margin-top: 20px; /* Add space above the FAQ section */
+        padding: 10px;
+    }
+
+    .faq-question {
+        font-size: 1.1em; /* Slightly smaller font size on mobile */
+    }
+
+    .faq-answer {
+        font-size: 1em; /* Adjust font size for better readability on mobile */
+    }
+}
+
+.sub-services {
+        display: none; /* Initially hidden */
+        padding-left: 15px;
+        background-color: #35A7A0; /* White background when expanded */
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .sidebar-sub-link {
+        display: flex; /* Flexbox for proper alignment */
+        align-items: center;
+        color: white; /* Text color inside sub-menu */
+        padding: 5px 0;
+        text-decoration: none;
+    }
+
+    .plus {
+        margin-right: 8px; /* Space between "+" and text */
+        font-weight: bold;
+        color: white;
+    }
+
+    .sidebar-sub-link:hover {
+        text-decoration: underline;
+    }
+
     </style>
 </head>
 
@@ -664,28 +901,39 @@
         </div>
 
         <aside class="sidebar">
-            <nav class="sidebar-nav" role="navigation" aria-label="Secondary navigation">
-                <!-- Home link -->
-                <a href="index.html" class="sidebar-link">Home</a>
-
-                <!-- Dropdown for Services -->
-                <div class="nav-item dropdown">
-                    <a href="#" class="sidebar-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                    <div class="dropdown-menu bg-light">
-                        <a href="Digital_marketing.html" class="dropdown-item">Digital Marketing</a>
-                        <a href="landingpage.html" class="dropdown-item">Website Landing Page</a>
-                        <a href="Social_media_management.html" class="dropdown-item">Social Media Management</a>
-                        <a href="SEO.html" class="dropdown-item">SEO</a>
-                        <a href="E-Commerce.html" class="dropdown-item">E-Commerce Digital Marketing</a>
-                    </div>
+          <nav class="sidebar-nav" role="navigation" aria-label="Secondary navigation">
+            <!-- Home link -->
+            <a href="index.html" class="sidebar-link">Home</a>
+        
+            <!-- Services Section (Expandable) -->
+            <div class="nav-item">
+                <a href="#" class="sidebar-link" id="servicesToggle">Services</a>
+                <div class="sub-services" id="servicesDropdown">
+                    <a href="Digital_marketing.html" class="sidebar-sub-link"><span class="plus">+</span> Digital Marketing</a>
+                    <a href="landingpage.html" class="sidebar-sub-link"><span class="plus">+</span> Website Landing Page</a>
+                    <a href="Social_media_management.html" class="sidebar-sub-link"><span class="plus">+</span> Social Media
+                        Management</a>
+                    <a href="SEO.html" class="sidebar-sub-link"><span class="plus">+</span> SEO</a>
+                    <a href="E-Commerce.html" class="sidebar-sub-link"><span class="plus">+</span> E-Commerce Digital
+                        Marketing</a>
                 </div>
+            </div>
+        
+            <!-- Meeting Booking link -->
+            <a href="book.html" class="sidebar-link active">Meeting Booking</a>
+        
+            <!-- Contact link -->
+            <a href="contact.html" class="sidebar-link">Contact</a>
+        </nav>
+        
+        <script>
+            document.getElementById("servicesToggle").addEventListener("click", function (event) {
+                event.preventDefault(); // Prevents jumping to top
+                var dropdown = document.getElementById("servicesDropdown");
+                dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+            });
+        </script>
 
-                <!-- Meeting Booking link -->
-                <a href="book.html" class="sidebar-link active">Meeting Booking</a>
-
-                <!-- Contact link -->
-                <a href="contact.html" class="sidebar-link">Contact</a>
-            </nav>
         </aside>
     </main>
 </div>
@@ -850,8 +1098,124 @@
         </div>
     </div>
 
+<div class="text-center  wow bounceInUp" style="margin-top: 50px;" data-wow-delay="0.1s">
+    <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border rounded-pill px-4 py-1 mb-3"
+        style="border-color: #35A7A0;">Contact Us</small>
+</div>
+
+<div class="container-contact">
+    <!-- Left Column -->
+
+    <div class="left-column-contact wow bounceInUp" data-wow-delay="0.1s">
+        <h2 style="font-size: 40px;">Have a project in mind?</h2>
+        <h3 style="font-size: 20px;"> Let’s get to work</h3>
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column-contact">
+        <div class="contact-us-wrapper">
+            <a href="contact.html"> <!-- Link to index.html -->
+                <div class="contact-us-circle wow bounceInUp" data-wow-delay="0.1s">
+                    <span>Contact Us</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
     
-    <div class="container-fluid footer py-6 my-6 mb-0 wow bounceInUp" data-wow-delay="0.1s"
+
+
+
+<h5 style="text-align: center; padding: 10% 30% 0px 30%;">Explore Corenet Tech’s FAQ on consulting, development,
+    marketing, and more. Unravel the mysteries of IT and make your
+    journey fast-forward.</h5>
+
+<div class="faq-container">
+
+    <div class="faq-content">
+
+        <div class="left-side wow bounceInUp" data-wow-delay="0.1s">
+            <div class="text-center  wow bounceInUp" style="margin-top: 50px;" data-wow-delay="0.1s">
+                <small
+                    class="d-inline-block fw-bold text-dark text-uppercase bg-light border rounded-pill px-4 py-1 mb-3"
+                    style="border-color: #35A7A0;">FAQs</small>
+            </div>
+
+            <h1>Fast-Track Help</h1>
+            <h1>Desk</h1>
+        </div>
+        <div class="right-side wow bounceInUp" data-wow-delay="0.1s">
+            <div class="faq-item ">
+                <div class="faq-question">What is SEO and why is it important for my website?</div>
+                <div class="faq-answer">SEO, or Search Engine Optimization, is the process of optimizing a website to rank higher on search engines like Google.
+                The goal is to increase the visibility of your site when users search for relevant keywords, which ultimately drives
+                more organic (unpaid) traffic to your site. SEO is crucial because higher rankings lead to better visibility, and
+                businesses that appear on the first page of search results are more likely to attract potential customers. By
+                implementing SEO strategies like keyword optimization, improving website speed, and ensuring mobile-friendliness, you
+                can enhance your site's chances of ranking higher and connecting with your target audience.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How long does it take to see SEO results?</div>
+                <div class="faq-answer">SEO is a long-term strategy, and results typically take several months to become noticeable. It depends on various
+                factors such as your website's current performance, the competitiveness of your industry, and the effectiveness of the
+                SEO tactics you're implementing. While some improvements, like technical SEO or website optimization, can show quick
+                results, it often takes 3 to 6 months to see significant changes in search rankings and organic traffic.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What are the main components of SEO?</div>
+                <div class="faq-answer">SEO involves a combination of on-page and off-page factors. On-page SEO includes optimizing the content on your website,
+                such as using relevant keywords, improving meta tags (like titles and descriptions), and ensuring a good user experience
+                through mobile optimization and fast page load times.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do I need to update my website regularly for SEO?</div>
+                <div class="faq-answer">Yes, keeping your website updated regularly is important for maintaining and improving SEO performance. Search engines
+                like Google favor fresh, relevant content. By frequently updating your website with new blog posts, articles, or product
+                updates, you can signal to search engines that your site is active and providing current information. Regular updates
+                also give you the opportunity to optimize older content with new keywords, improve user experience, and ensure that your
+                website remains aligned with the latest SEO best practices.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I do SEO on my own, or do I need to hire a professional?</div>
+                <div class="faq-answer">While basic SEO tasks can be done by website owners themselves, such as researching keywords, optimizing content, and
+                fixing technical issues, SEO is an ongoing and complex process. As search engine algorithms continually evolve, staying
+                up-to-date with SEO trends and best practices can be challenging.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function () {
+                const answer = this.nextElementSibling;
+                const isOpen = answer.classList.contains('open');
+
+                // Close all answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.classList.remove('open');
+                });
+
+                // Remove active class from all questions
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                });
+
+                // Toggle the clicked question
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    this.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
+
+
+    <div class="container-fluid footer py-5 my-6 mb-0 wow bounceInUp" data-wow-delay="0.1s"
         style="background-color: #35A7A0;">
         <div class="container">
             <div class="row d-flex justify-content-between">

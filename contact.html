@@ -182,7 +182,7 @@
 .sidebar {
     width: 300px;
     background-color: var(--primary-color);
-    height: 70vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     padding: 40px;
@@ -382,6 +382,124 @@
     transform: translateX(100%); /* Hide sidebar when not in view */
 }
 
+
+
+.contact-us-wrapper {
+    display: flex;
+    justify-content: center; /* Center the circle horizontally */
+    align-items: center;
+    margin-top: 20px; /* Optional, to give space between the rows */
+}
+
+.contact-us-circle {
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Vertically center text */
+    justify-content: center; /* Horizontally center text */
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    color: #35A7A0;
+    border: 2px solid #35A7A0;
+    border-radius: 50%;
+    font-size: 14px; /* Adjusted font size for better fit */
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-us-circle span {
+    display: block;
+    font-size: 12px; /* Adjust font size as needed */
+}
+
+.contact-us-circle:hover {
+    background-color: #35A7A0;
+    color: #fff;
+    transform: scale(1.1);  /* Slowly grow the size */
+}
+
+.contact-us-circle:hover span {
+    color: #fff; /* Change text color on hover */
+}
+
+
+/* Container for both columns */
+.container-contact {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    padding: 20px;
+    width: 100%; /* Ensure it takes up full width */
+}
+
+/* Left Column */
+.left-column-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Align text to the left */
+    margin-right: 300px; /* Small gap between text and circle */
+}
+
+/* Right Column */
+.right-column-contact {
+    display: flex;
+    justify-content: center; /* Center the circle horizontally */
+    align-items: center; /* Center the circle vertically */
+    margin-left: 0; /* Ensure no margin to the left */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .container-contact {
+        flex-direction: column; /* Stack columns vertically on small screens */
+        justify-content: center; /* Ensure both elements are still centered */
+        align-items: center; /* Center both elements */
+    }
+
+    .left-column-contact,
+    .right-column-contact {
+        margin-right: 0; /* Remove margin to make sure there is no extra space */
+        margin-bottom: 10px; /* Add space between the text and circle */
+    }
+
+    .left-column-contact {
+        text-align: center; /* Center the text horizontally on small screens */
+    }
+
+    .right-column-contact {
+        margin-top: 10px; /* Optional: Add margin between text and circle when stacked */
+    }
+}
+
+
+.sub-services {
+        display: none; /* Initially hidden */
+        padding-left: 15px;
+        background-color: #35A7A0; /* White background when expanded */
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .sidebar-sub-link {
+        display: flex; /* Flexbox for proper alignment */
+        align-items: center;
+        color: white; /* Text color inside sub-menu */
+        padding: 5px 0;
+        text-decoration: none;
+    }
+
+    .plus {
+        margin-right: 8px; /* Space between "+" and text */
+        font-weight: bold;
+        color: white;
+    }
+
+    .sidebar-sub-link:hover {
+        text-decoration: underline;
+    }
+
     </style>
     </head>
     
@@ -439,26 +557,36 @@
                 <nav class="sidebar-nav" role="navigation" aria-label="Secondary navigation">
                     <!-- Home link -->
                     <a href="index.html" class="sidebar-link">Home</a>
-    
-                    <!-- Dropdown for Services -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="sidebar-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                        <div class="dropdown-menu bg-light">
-                            <a href="Digital_marketing.html" class="dropdown-item">Digital Marketing</a>
-                            <a href="landingpage.html" class="dropdown-item">Website Landing Page</a>
-                            <a href="Social_media_management.html" class="dropdown-item">Social Media Management</a>
-                            <a href="SEO.html" class="dropdown-item">SEO</a>
-                            <a href="E-Commerce.html" class="dropdown-item">E-Commerce Digital Marketing</a>
+                
+                    <!-- Services Section (Expandable) -->
+                    <div class="nav-item">
+                        <a href="#" class="sidebar-link" id="servicesToggle">Services</a>
+                        <div class="sub-services" id="servicesDropdown">
+                            <a href="Digital_marketing.html" class="sidebar-sub-link"><span class="plus">+</span> Digital Marketing</a>
+                            <a href="landingpage.html" class="sidebar-sub-link"><span class="plus">+</span> Website Landing Page</a>
+                            <a href="Social_media_management.html" class="sidebar-sub-link"><span class="plus">+</span> Social Media
+                                Management</a>
+                            <a href="SEO.html" class="sidebar-sub-link"><span class="plus">+</span> SEO</a>
+                            <a href="E-Commerce.html" class="sidebar-sub-link"><span class="plus">+</span> E-Commerce Digital
+                                Marketing</a>
                         </div>
                     </div>
-    
+                
                     <!-- Meeting Booking link -->
                     <a href="book.html" class="sidebar-link active">Meeting Booking</a>
-    
+                
                     <!-- Contact link -->
                     <a href="contact.html" class="sidebar-link">Contact</a>
                 </nav>
-            </aside>
+                
+                <script>
+                    document.getElementById("servicesToggle").addEventListener("click", function (event) {
+                        event.preventDefault(); // Prevents jumping to top
+                        var dropdown = document.getElementById("servicesDropdown");
+                        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+                    });
+                </script>
+        </aside>
         </main>
     </div>
     
@@ -574,7 +702,32 @@
             </div>
         </div>
         
-        <div class="container-fluid footer py-6 my-6 mb-0 wow bounceInUp" data-wow-delay="0.1s"
+<div class="text-center  wow bounceInUp" style="margin-top: 50px;" data-wow-delay="0.1s">
+    <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border rounded-pill px-4 py-1 mb-3"
+        style="border-color: #35A7A0;">Contact Us</small>
+</div>
+
+<div class="container-contact">
+    <!-- Left Column -->
+
+    <div class="left-column-contact wow bounceInUp" data-wow-delay="0.1s">
+        <h2 style="font-size: 40px;">Have a project in mind?</h2>
+        <h3 style="font-size: 20px;"> Let’s get to work</h3>
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column-contact">
+        <div class="contact-us-wrapper">
+        <a href="contact.html"> <!-- Link to index.html -->
+            <div class="contact-us-circle wow bounceInUp" data-wow-delay="0.1s">
+                <span>Contact Us</span>
+            </div>
+        </a>
+        </div>
+    </div>
+</div>
+
+        <div class="container-fluid footer py-5 my-6 mb-0 wow bounceInUp" data-wow-delay="0.1s"
             style="background-color: #35A7A0;">
             <div class="container">
                 <div class="row d-flex justify-content-between">
