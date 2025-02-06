@@ -269,586 +269,23 @@
 
             cursor: none;
             overflow: auto;
+
+        }
+
+
         
+        .header {
+            display: flex;
+            justify-content: flex-start;
+            /* Align the logo to the left */
+            align-items: center;
+            padding: 0px 0px;
+            width: 100%;
+            background-color: #C8ECFA;
+            z-index: 10;
         }
 
-        .cursor-dot {
-            width: 8px;
-            height: 8px;
-            background-color: black;
-            border-radius: 50%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-        
-            z-index: 1000;
-            transition: transform 0.1s ease-out;
-        }
 
-        .cursor-outline {
-            width: 30px;
-            height: 30px;
-            border: 2px solid hsla(0, 26%, 5%, 0.5);
-            border-radius: 50%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 999;
-            transition: all 0.2s ease-out;
-        }
-                 :root {
-    --primary-color: #35a7a0;
-    --text-dark: #000;
-    --text-light: #fff;
-    --font-primary: "Inter", sans-serif;
-    --font-secondary: "Raleway", sans-serif;
-    --font-accent: "Sanchez", serif;
-  }
-
-  .page-wrapper {
-    width: 100%;
-    min-height: 0vh;
-    background-color: var(--text-light);
-  }
-
-.header {
-    display: flex;
-    justify-content: flex-start; /* Align the logo to the left */
-    align-items: center;
-    padding: 0px 0px;
-    width: 100%;
-    background-color: #C8ECFA;
-    z-index: 10;
-}
-
-
-  
-.brand-logo {
-    width: 400px;
-    height: auto;
-    /* Remove the position styles to allow it to scroll with the page */
-    /* position: absolute;  <-- Remove this */
-    top: 10px;
-    left: 40px;
-}
-
-  .nav-menu {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-  }
-
-  .nav-link {
-    color: var(--primary-color);
-    text-transform: uppercase;
-    letter-spacing: 2.9px;
-    text-decoration: none;
-    font: 700 20px var(--font-primary);
-  }
-
-  .hero-section {
-    display: flex;
-    height: 100vh;
-  }
-
-  .hero-content {
-    flex: 1;
-    padding: 0px 100px 40px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .hero-text-wrapper {
-    margin-top: 80px;
-  }
-
-  .hero-preheading {
-    letter-spacing: 1.8px;
-    color: var(--text-dark);
-    margin-bottom: 20px;
-    font: 400 36px var(--font-secondary);
-  }
-
-  .hero-heading {
-    font-size: 45px;
-    font-weight: 700;
-    letter-spacing: 9.9px;
-    text-transform: uppercase;
-    line-height: 57px;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    margin-bottom: 40px;
-  }
-
-  .hero-heading-highlight {
-    font-family: var(--font-accent);
-    color: var(--primary-color);
-  }
-
-  .hero-subheading {
-    color: var(--primary-color);
-    margin-top: 40px;
-    font: 800 36px var(--font-primary);
-  }
-
-  .cta-button {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    border: 2px solid var(--primary-color);
-    border-radius: 54px;
-    padding: 23px 35px;
-    text-transform: uppercase;
-    letter-spacing: 2.01px;
-    width: fit-content;
-    margin-top: 40px;
-    cursor: pointer;
-    font: 700 14px var(--font-primary);
-  }
-
-
-
-/* Default sidebar styles (shown on larger screens) */
-.sidebar {
-    width: 300px;
-    background-color: var(--primary-color);
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
-    position: fixed; /* Initially fixed */
-    top: 0;
-    right: 0;
-    transition: transform 0.3s ease; /* Smooth transition for hiding/showing */
-}
-
-/* Hide sidebar when scrolling down */
-.sidebar.hide {
-    transform: translateX(100%); /* Move it off-screen */
-}
-
-/* Keep sidebar fixed on large screens */
-.sidebar.fixed {
-    position: fixed;
-}
-
-/* Sidebar Toggle Button (Small Screens) */
-.sidebar-toggle {
-    display: none;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: transparent;
-    color: black;
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1001;
-    border: none;
-    font-size: 24px;
-    transition: color 0.3s ease;
-}
-
-/* Mobile styles */
-@media (max-width: 991px) {
-    .sidebar {
-        transform: translateX(100%);
-        display: block;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .sidebar.open {
-        transform: translateX(0);
-    }
-}
-
-
-.sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 100px;
-}
-
-.sidebar-link {
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 2.9px;
-    text-decoration: none;
-}
-
-  @media (max-width: 991px) {
-    .header {
-      padding: 20px;
-    }
-
-    .brand-logo {
-      position: relative;
-      top: 0;
-      left: 0;
-    }
-
-    .hero-section {
-      flex-direction: column;
-    }
-
-    .hero-preheading {
-      font-size: 30px;
-    }
-
-    .hero-heading {
-      font-size: 40px;
-      letter-spacing: 6px;
-      line-height: 50px;
-    }
-
-    .hero-subheading {
-      font-size: 30px;
-    }
-
-    .sidebar {
-      width: 100%;
-      height: auto;
-      padding: 20px;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .nav-menu {
-      display: none;
-    }
-
-
-    .hero-preheading {
-      font-size: 24px;
-    }
-
-    .hero-heading {
-      font-size: 32px;
-      letter-spacing: 4px;
-      line-height: 40px;
-    }
-
-    .hero-subheading {
-      font-size: 24px;
-    }
-
-    .cta-button {
-      width: 100%;
-      text-align: center;
-    }
-  }
-
-
-
-.hero-preheading,
-.hero-subheading,
-.hero-heading,
-.cta-button {
-    opacity: 1; /* Keep other elements static */
-}
-
-.hero-heading {
-    display: flex;
-    flex-direction: row;
-    font-size: 36px;
-}
-
-.hero-heading-highlight {
-    color: #ff6600; /* Highlight the "Empowering" text */
-    text-transform: uppercase; /* Ensure highlight is uppercase */
-}
-
-.typewriter-text {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 0;
-    border-right: 2px solid #000;
-    font-size: 36px;
-    text-transform: uppercase; /* Make the text uppercase */
-    animation: typing 4s steps(30) infinite, blink 0.75s step-end infinite;
-}
-
-.typewriter-text span {
-    display: inline-block;
-}
-
-.hero-subheading {
-    margin-top: 20px;
-    font-size: 24px;
-    font-weight: 500;
-}
-
-.cta-button {
-    margin-top: 30px;
-    padding: 12px 24px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #ff6600;
-    color: white;
-}
-
-@keyframes typing {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
-}
-
-.sidebar.hidden {
-    transform: translateX(100%); /* Hide sidebar when not in view */
-}
-
-
-
-.contact-us-wrapper {
-    display: flex;
-    justify-content: center; /* Center the circle horizontally */
-    align-items: center;
-    margin-top: 20px; /* Optional, to give space between the rows */
-}
-
-.contact-us-circle {
-    display: flex; /* Enable flexbox */
-    align-items: center; /* Vertically center text */
-    justify-content: center; /* Horizontally center text */
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-    color: #35A7A0;
-    border: 2px solid #35A7A0;
-    border-radius: 50%;
-    font-size: 14px; /* Adjusted font size for better fit */
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.contact-us-circle span {
-    display: block;
-    font-size: 12px; /* Adjust font size as needed */
-}
-
-.contact-us-circle:hover {
-    background-color: #35A7A0;
-    color: #fff;
-    transform: scale(1.1);  /* Slowly grow the size */
-}
-
-.contact-us-circle:hover span {
-    color: #fff; /* Change text color on hover */
-}
-
-
-/* Container for both columns */
-.container-contact {
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    padding: 20px;
-    width: 100%; /* Ensure it takes up full width */
-}
-
-/* Left Column */
-.left-column-contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: flex-start; /* Align text to the left */
-    margin-right: 300px; /* Small gap between text and circle */
-}
-
-/* Right Column */
-.right-column-contact {
-    display: flex;
-    justify-content: center; /* Center the circle horizontally */
-    align-items: center; /* Center the circle vertically */
-    margin-left: 0; /* Ensure no margin to the left */
-}
-
-/* Media Query for Smaller Screens */
-@media (max-width: 768px) {
-    .container-contact {
-        flex-direction: column; /* Stack columns vertically on small screens */
-        justify-content: center; /* Ensure both elements are still centered */
-        align-items: center; /* Center both elements */
-    }
-
-    .left-column-contact,
-    .right-column-contact {
-        margin-right: 0; /* Remove margin to make sure there is no extra space */
-        margin-bottom: 10px; /* Add space between the text and circle */
-    }
-
-    .left-column-contact {
-        text-align: center; /* Center the text horizontally on small screens */
-    }
-
-    .right-column-contact {
-        margin-top: 10px; /* Optional: Add margin between text and circle when stacked */
-    }
-}
-
-
-
-.faq-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.faq-content {
-    display: flex;
-    width: 80%;
-    max-width: 1200px;
-    background-color: #fff;
-   
-    padding: 20px;
-    justify-items: center;
-    justify-content: center;
-    border-radius: 10px;
-}
-
-/* Left Side */
-.left-side {
-    flex: 1;
-    padding: 20px;
-   
-    animation: slideInLeft 1s ease-in-out;
-}
-
-.left-side h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    
-}
-
-.left-side p {
-    font-size: 1.2em;
-    color: #666;
-}
-
-/* Right Side (FAQ Questions) */
-.right-side {
-    padding: 20px;
-    margin-left: 20px; /* Adds space between the left and right side */
-    flex: 2; /* Takes up more space than the left side */
-}
-
-/* FAQ Item Styling */
-.faq-item {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.faq-question {
-    font-size: 1.2em;
-    padding: 10px;
-    cursor: pointer;
-    position: relative;
-    transition: background-color 0.3s ease;
-}
-
-.faq-question:hover {
-    background-color: #f9f9f9;
-}
-
-.faq-question::after {
-    content: '+';
-    position: absolute;
-    right: 10px;
-    transition: transform 0.3s ease;
-}
-
-.faq-question.active::after {
-    content: '-';
-    transform: rotate(180deg);
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    padding: 0 10px;
-}
-
-.faq-answer.open {
-    max-height: 200px;
-    padding: 10px;
-}
-
-
-
-/* Media Query for Small Screens (Responsive Design) */
-@media (max-width: 768px) {
-    .faq-content {
-        flex-direction: column; /* Stack the sections vertically */
-        padding: 10px;
-    }
-
-    .left-side {
-        text-align: center;
-        margin-bottom: 20px; /* Space between left side and FAQ section */
-    }
-
-    .right-side {
-        margin-left: 0; /* Remove the margin between the sections */
-        margin-top: 20px; /* Add space above the FAQ section */
-        padding: 10px;
-    }
-
-    .faq-question {
-        font-size: 1.1em; /* Slightly smaller font size on mobile */
-    }
-
-    .faq-answer {
-        font-size: 1em; /* Adjust font size for better readability on mobile */
-    }
-}
-
-.sub-services {
-        display: none; /* Initially hidden */
-        padding-left: 15px;
-        background-color: #35A7A0; /* White background when expanded */
-        padding: 5px;
-        border-radius: 5px;
-    }
-
-    .sidebar-sub-link {
-        display: flex; /* Flexbox for proper alignment */
-        align-items: center;
-        color: white; /* Text color inside sub-menu */
-        padding: 5px 0;
-        text-decoration: none;
-    }
-
-    .plus {
-        margin-right: 8px; /* Space between "+" and text */
-        font-weight: bold;
-        color: white;
-    }
-
-    .sidebar-sub-link:hover {
-        text-decoration: underline;
-    }
 
     </style>
 </head>
@@ -869,138 +306,142 @@
             cursorOutline.style.top = `${posY}px`;
         });
     </script>
-    
+
     <div id="spinner"
         class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
     </div>
 
-<div class="page-wrapper">
-    <header class="header">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/59056c651bf7266f0b5cee6140203da080f2a9d7cd966f598163ac1c42193d77?apiKey=c1ecf55aff194658951953bc763cb953&"
-            alt="Shreeji Webex Logo" class="brand-logo">
+    <div class="page-wrapper">
+        <header class="header">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/59056c651bf7266f0b5cee6140203da080f2a9d7cd966f598163ac1c42193d77?apiKey=c1ecf55aff194658951953bc763cb953&"
+                alt="Shreeji Webex Logo" class="brand-logo">
 
 
-    </header>
+        </header>
 
-    <main class="">
+        <main class="">
 
-        <div class="hero-content">
-            <div class="hero-text-wrapper">
-                <div class="container-fluid  py-6 my-6 mt-0" >
-                    <div class="container text-center animated bounceInDown">
-                        <h1 class="display-1 mb-4">SEO Google 1st page ranking </h1>
-                        <ol class="breadcrumb justify-content-center mb-0 animated bounceInDown">
-                            <li class="breadcrumb-item"><a href="#" style="color: #35A7A0;">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#" style="color: #35A7A0;">Services</a></li>
-                            <li class="breadcrumb-item text-dark" aria-current="page">SEO</li>
-                        </ol>
+            <div class="hero-content">
+                <div class="hero-text-wrapper">
+                    <div class="container-fluid  py-6 my-6 mt-0">
+                        <div class="container text-center animated bounceInDown">
+                            <h1 class="display-1 mb-4">SEO Google 1st page ranking </h1>
+                            <ol class="breadcrumb justify-content-center mb-0 animated bounceInDown">
+                                <li class="breadcrumb-item"><a href="#" style="color: #35A7A0;">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#" style="color: #35A7A0;">Services</a></li>
+                                <li class="breadcrumb-item text-dark" aria-current="page">SEO</li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <aside class="sidebar">
-          <nav class="sidebar-nav" role="navigation" aria-label="Secondary navigation">
-            <!-- Home link -->
-            <a href="index.html" class="sidebar-link">Home</a>
-        
-            <!-- Services Section (Expandable) -->
-            <div class="nav-item">
-                <a href="#" class="sidebar-link" id="servicesToggle">Services</a>
-                <div class="sub-services" id="servicesDropdown">
-                    <a href="Digital_marketing.html" class="sidebar-sub-link"><span class="plus">+</span> Digital Marketing</a>
-                    <a href="landingpage.html" class="sidebar-sub-link"><span class="plus">+</span> Website Landing Page</a>
-                    <a href="Social_media_management.html" class="sidebar-sub-link"><span class="plus">+</span> Social Media
-                        Management</a>
-                    <a href="SEO.html" class="sidebar-sub-link"><span class="plus">+</span> SEO</a>
-                    <a href="E-Commerce.html" class="sidebar-sub-link"><span class="plus">+</span> E-Commerce Digital
-                        Marketing</a>
-                </div>
-            </div>
-        
-            <!-- Meeting Booking link -->
-            <a href="book.html" class="sidebar-link active">Meeting Booking</a>
-        
-            <!-- Contact link -->
-            <a href="contact.html" class="sidebar-link">Contact</a>
-        </nav>
-        
-        <script>
-            document.getElementById("servicesToggle").addEventListener("click", function (event) {
-                event.preventDefault(); // Prevents jumping to top
-                var dropdown = document.getElementById("servicesDropdown");
-                dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-            });
-        </script>
+            <aside class="sidebar">
+                <nav class="sidebar-nav" role="navigation" aria-label="Secondary navigation">
+                   
+                    <a href="index.html" class="sidebar-link">Home</a>
 
-        </aside>
-    </main>
-</div>
+                 
+                    <div class="nav-item">
+                        <a href="#" class="sidebar-link" id="servicesToggle">Services</a>
+                        <div class="sub-services" id="servicesDropdown">
+                            <a href="Digital_marketing.html" class="sidebar-sub-link"><span class="plus">+</span>
+                                Digital Marketing</a>
+                            <a href="landingpage.html" class="sidebar-sub-link"><span class="plus">+</span> Website
+                                Landing Page</a>
+                            <a href="Social_media_management.html" class="sidebar-sub-link"><span class="plus">+</span>
+                                Social Media
+                                Management</a>
+                            <a href="SEO.html" class="sidebar-sub-link"><span class="plus">+</span> SEO</a>
+                            <a href="E-Commerce.html" class="sidebar-sub-link"><span class="plus">+</span> E-Commerce
+                                Digital
+                                Marketing</a>
+                        </div>
+                    </div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const sidebar = document.querySelector(".sidebar");
-        const sidebarToggle = document.createElement("button"); // Create the toggle button
-        sidebarToggle.textContent = "☰"; // Hamburger icon
-        sidebarToggle.classList.add("sidebar-toggle");
-        document.body.appendChild(sidebarToggle); // Append the button to the body
+                 
+                    <a href="book.html" class="sidebar-link active">Meeting Booking</a>
 
-        let lastScrollTop = 0;
+                  
+                    <a href="contact.html" class="sidebar-link">Contact</a>
+                </nav>
 
-        // Function to check screen size and display sidebar toggle
-        function checkScreenSize() {
-            if (window.innerWidth <= 991) {
-                sidebar.classList.remove("fixed");
-                sidebarToggle.style.display = "block"; // Show toggle button
-            } else {
-                sidebar.classList.add("fixed");
-                sidebarToggle.style.display = "none"; // Hide toggle button on larger screens
-            }
-        }
+                <script>
+                    document.getElementById("servicesToggle").addEventListener("click", function (event) {
+                        event.preventDefault(); 
+                        var dropdown = document.getElementById("servicesDropdown");
+                        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+                    });
+                </script>
 
-        checkScreenSize();
-        window.addEventListener("resize", checkScreenSize);
+            </aside>
+        </main>
+    </div>
 
-        // Function to handle scroll behavior
-        window.addEventListener("scroll", function () {
-            let scrollTop = window.scrollY;
-            let heroRect = document.querySelector(".hero-content").getBoundingClientRect();
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebar = document.querySelector(".sidebar");
+            const sidebarToggle = document.createElement("button"); 
+            sidebarToggle.textContent = "☰"; 
+            sidebarToggle.classList.add("sidebar-toggle");
+            document.body.appendChild(sidebarToggle); 
 
-            // Prevent sidebar show/hide behavior based on scroll on small screens
-            if (window.innerWidth > 991) {
-                if (heroRect.top >= 0 && heroRect.bottom <= window.innerHeight) {
-                    // Hero section is visible, show sidebar
-                    sidebar.classList.add("fixed");
-                    sidebar.classList.remove("hidden");
+            let lastScrollTop = 0;
+
+         
+            function checkScreenSize() {
+                if (window.innerWidth <= 991) {
+                    sidebar.classList.remove("fixed");
+                    sidebarToggle.style.display = "block"; 
                 } else {
-                    // Hero section is not visible, handle scroll direction
-                    if (scrollTop > lastScrollTop) {
-                        // Scrolling down, hide sidebar
-                        sidebar.classList.add("hidden");
+                    sidebar.classList.add("fixed");
+                    sidebarToggle.style.display = "none"; 
+                }
+            }
+
+            checkScreenSize();
+            window.addEventListener("resize", checkScreenSize);
+
+         
+            window.addEventListener("scroll", function () {
+                let scrollTop = window.scrollY;
+                let heroRect = document.querySelector(".hero-content").getBoundingClientRect();
+
+           
+                if (window.innerWidth > 991) {
+                    if (heroRect.top >= 0 && heroRect.bottom <= window.innerHeight) {
+                      
+                        sidebar.classList.add("fixed");
+                        sidebar.classList.remove("hidden");
                     } else {
-                        // Scrolling up, show sidebar when hero section is back in view
-                        if (heroRect.top >= 0) {
-                            sidebar.classList.remove("hidden");
+                      
+                        if (scrollTop > lastScrollTop) {
+                           
+                            sidebar.classList.add("hidden");
+                        } else {
+                          
+                            if (heroRect.top >= 0) {
+                                sidebar.classList.remove("hidden");
+                            }
                         }
                     }
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
                 }
-                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scroll value
-            }
+            });
+
+          
+            sidebarToggle.addEventListener("click", function () {
+                sidebar.classList.toggle("open");
+            });
         });
 
-        // Toggle sidebar visibility on mobile screens (if sidebar is hidden or shown)
-        sidebarToggle.addEventListener("click", function () {
-            sidebar.classList.toggle("open");
-        });
-    });
+
+
+    </script>
 
 
 
-</script>
-   
-   
-   
     <div class="terms-section">
         <h1 class="terms-heading">Terms & Condition</h1>
         <div class="content-wrapper">
@@ -1098,195 +539,120 @@
         </div>
     </div>
 
-<div class="text-center  wow bounceInUp" style="margin-top: 50px;" data-wow-delay="0.1s">
-    <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border rounded-pill px-4 py-1 mb-3"
-        style="border-color: #35A7A0;">Contact Us</small>
-</div>
+    <special-contactus></special-contactus>
 
-<div class="container-contact">
-    <!-- Left Column -->
 
-    <div class="left-column-contact wow bounceInUp" data-wow-delay="0.1s">
-        <h2 style="font-size: 40px;">Have a project in mind?</h2>
-        <h3 style="font-size: 20px;"> Let’s get to work</h3>
-    </div>
 
-    <!-- Right Column -->
-    <div class="right-column-contact">
-        <div class="contact-us-wrapper">
-            <a href="contact.html"> <!-- Link to index.html -->
-                <div class="contact-us-circle wow bounceInUp" data-wow-delay="0.1s">
-                    <span>Contact Us</span>
+    <h5 style="text-align: center; padding: 10% 30% 0px 30%;">Explore Corenet Tech’s FAQ on consulting, development,
+        marketing, and more. Unravel the mysteries of IT and make your
+        journey fast-forward.</h5>
+
+    <div class="faq-container">
+
+        <div class="faq-content">
+
+            <div class="left-side wow bounceInUp" data-wow-delay="0.1s">
+                <div class="text-center  wow bounceInUp" style="margin-top: 50px;" data-wow-delay="0.1s">
+                    <small
+                        class="d-inline-block fw-bold text-dark text-uppercase bg-light border rounded-pill px-4 py-1 mb-3"
+                        style="border-color: #35A7A0;">FAQs</small>
                 </div>
-            </a>
-        </div>
-    </div>
-</div>
-    
 
-
-
-<h5 style="text-align: center; padding: 10% 30% 0px 30%;">Explore Corenet Tech’s FAQ on consulting, development,
-    marketing, and more. Unravel the mysteries of IT and make your
-    journey fast-forward.</h5>
-
-<div class="faq-container">
-
-    <div class="faq-content">
-
-        <div class="left-side wow bounceInUp" data-wow-delay="0.1s">
-            <div class="text-center  wow bounceInUp" style="margin-top: 50px;" data-wow-delay="0.1s">
-                <small
-                    class="d-inline-block fw-bold text-dark text-uppercase bg-light border rounded-pill px-4 py-1 mb-3"
-                    style="border-color: #35A7A0;">FAQs</small>
+                <h1>Fast-Track Help</h1>
+                <h1>Desk</h1>
             </div>
-
-            <h1>Fast-Track Help</h1>
-            <h1>Desk</h1>
-        </div>
-        <div class="right-side wow bounceInUp" data-wow-delay="0.1s">
-            <div class="faq-item ">
-                <div class="faq-question">What is SEO and why is it important for my website?</div>
-                <div class="faq-answer">SEO, or Search Engine Optimization, is the process of optimizing a website to rank higher on search engines like Google.
-                The goal is to increase the visibility of your site when users search for relevant keywords, which ultimately drives
-                more organic (unpaid) traffic to your site. SEO is crucial because higher rankings lead to better visibility, and
-                businesses that appear on the first page of search results are more likely to attract potential customers. By
-                implementing SEO strategies like keyword optimization, improving website speed, and ensuring mobile-friendliness, you
-                can enhance your site's chances of ranking higher and connecting with your target audience.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">How long does it take to see SEO results?</div>
-                <div class="faq-answer">SEO is a long-term strategy, and results typically take several months to become noticeable. It depends on various
-                factors such as your website's current performance, the competitiveness of your industry, and the effectiveness of the
-                SEO tactics you're implementing. While some improvements, like technical SEO or website optimization, can show quick
-                results, it often takes 3 to 6 months to see significant changes in search rankings and organic traffic.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">What are the main components of SEO?</div>
-                <div class="faq-answer">SEO involves a combination of on-page and off-page factors. On-page SEO includes optimizing the content on your website,
-                such as using relevant keywords, improving meta tags (like titles and descriptions), and ensuring a good user experience
-                through mobile optimization and fast page load times.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Do I need to update my website regularly for SEO?</div>
-                <div class="faq-answer">Yes, keeping your website updated regularly is important for maintaining and improving SEO performance. Search engines
-                like Google favor fresh, relevant content. By frequently updating your website with new blog posts, articles, or product
-                updates, you can signal to search engines that your site is active and providing current information. Regular updates
-                also give you the opportunity to optimize older content with new keywords, improve user experience, and ensure that your
-                website remains aligned with the latest SEO best practices.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Can I do SEO on my own, or do I need to hire a professional?</div>
-                <div class="faq-answer">While basic SEO tasks can be done by website owners themselves, such as researching keywords, optimizing content, and
-                fixing technical issues, SEO is an ongoing and complex process. As search engine algorithms continually evolve, staying
-                up-to-date with SEO trends and best practices can be challenging.</div>
+            <div class="right-side wow bounceInUp" data-wow-delay="0.1s">
+                <div class="faq-item ">
+                    <div class="faq-question">What is SEO and why is it important for my website?</div>
+                    <div class="faq-answer">SEO, or Search Engine Optimization, is the process of optimizing a website
+                        to rank higher on search engines like Google.
+                        The goal is to increase the visibility of your site when users search for relevant keywords,
+                        which ultimately drives
+                        more organic (unpaid) traffic to your site. SEO is crucial because higher rankings lead to
+                        better visibility, and
+                        businesses that appear on the first page of search results are more likely to attract potential
+                        customers. By
+                        implementing SEO strategies like keyword optimization, improving website speed, and ensuring
+                        mobile-friendliness, you
+                        can enhance your site's chances of ranking higher and connecting with your target audience.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How long does it take to see SEO results?</div>
+                    <div class="faq-answer">SEO is a long-term strategy, and results typically take several months to
+                        become noticeable. It depends on various
+                        factors such as your website's current performance, the competitiveness of your industry, and
+                        the effectiveness of the
+                        SEO tactics you're implementing. While some improvements, like technical SEO or website
+                        optimization, can show quick
+                        results, it often takes 3 to 6 months to see significant changes in search rankings and organic
+                        traffic.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What are the main components of SEO?</div>
+                    <div class="faq-answer">SEO involves a combination of on-page and off-page factors. On-page SEO
+                        includes optimizing the content on your website,
+                        such as using relevant keywords, improving meta tags (like titles and descriptions), and
+                        ensuring a good user experience
+                        through mobile optimization and fast page load times.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do I need to update my website regularly for SEO?</div>
+                    <div class="faq-answer">Yes, keeping your website updated regularly is important for maintaining and
+                        improving SEO performance. Search engines
+                        like Google favor fresh, relevant content. By frequently updating your website with new blog
+                        posts, articles, or product
+                        updates, you can signal to search engines that your site is active and providing current
+                        information. Regular updates
+                        also give you the opportunity to optimize older content with new keywords, improve user
+                        experience, and ensure that your
+                        website remains aligned with the latest SEO best practices.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I do SEO on my own, or do I need to hire a professional?</div>
+                    <div class="faq-answer">While basic SEO tasks can be done by website owners themselves, such as
+                        researching keywords, optimizing content, and
+                        fixing technical issues, SEO is an ongoing and complex process. As search engine algorithms
+                        continually evolve, staying
+                        up-to-date with SEO trends and best practices can be challenging.</div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const faqQuestions = document.querySelectorAll('.faq-question');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqQuestions = document.querySelectorAll('.faq-question');
 
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', function () {
-                const answer = this.nextElementSibling;
-                const isOpen = answer.classList.contains('open');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function () {
+                    const answer = this.nextElementSibling;
+                    const isOpen = answer.classList.contains('open');
 
-                // Close all answers
-                document.querySelectorAll('.faq-answer').forEach(ans => {
-                    ans.classList.remove('open');
+                   
+                    document.querySelectorAll('.faq-answer').forEach(ans => {
+                        ans.classList.remove('open');
+                    });
+
+                    
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                    });
+
+                 
+                    if (!isOpen) {
+                        answer.classList.add('open');
+                        this.classList.add('active');
+                    }
                 });
-
-                // Remove active class from all questions
-                document.querySelectorAll('.faq-question').forEach(q => {
-                    q.classList.remove('active');
-                });
-
-                // Toggle the clicked question
-                if (!isOpen) {
-                    answer.classList.add('open');
-                    this.classList.add('active');
-                }
             });
         });
-    });
-</script>
+    </script>
 
 
-    <div class="container-fluid footer py-5 my-6 mb-0 wow bounceInUp" data-wow-delay="0.1s"
-        style="background-color: #35A7A0;">
-        <div class="container">
-            <div class="row d-flex justify-content-between">
-                <div class="col-lg-3 col-md-6 d-flex">
-                    <div class="footer-item">
-                        <h4 class="" style="color: white; text-transform: uppercase; letter-spacing: 5px;">Shreeji<span
-                                class="text-dark">webEx</span></h4>
-                        <p class="lh-lg mb-4" style="color: white;">Welcome to shreeji webex, your trusted partner in
-                            navigating the digital landscape. We are a full-service digital marketing agency dedicated to
-                            driving growth and success for businesses of all sizes.</p>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 d-flex">
-                    <div class="footer-item">
-                        <h4 class="mb-4" style="color: white;">Service</h4>
-                        <div class="d-flex flex-column align-items-start">
-                            <a class="mb-3" href="index.html" style="color: white;"><i class="fa fa-check me-2"
-                                    style="color: white;"></i>Home</a>
-                            <a class="mb-3" href="Digital_marketing.html" style="color: white;"><i class="fa fa-check me-2"
-                                    style="color: white;"></i>Service</a>
-                            <a class="mb-3" href="book.html" style="color: white;"><i class="fa fa-check me-2"
-                                    style="color: white;"></i>Meeting Booking</a>
-                            <a class="mb-3" href="contact.html" style="color: white;"><i class="fa fa-check me-2"
-                                    style="color: white;"></i>Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 d-flex">
-                    <div class="footer-item">
-                        <h4 class="mb-4" style="color: white;">Contact Us</h4>
-                        <div class="d-flex flex-column align-items-start">
-                            <p class="d-flex align-items-center" style="color: white;">
-                                <i class="fa fa-map-marker-alt me-2" style="color: white;"></i>
-                                30-31 Gokul park-3, Utarn, Surat, Gujarat -394105
-                            </p>
-                            <p class="d-flex align-items-center" style="color: white;">
-                                <i class="fa fa-phone-alt me-2" style="color: white;"></i>
-                                +91 9512890864
-                            </p>
-                            <p class="d-flex align-items-center" style="color: white;">
-                                <i class="fas fa-envelope me-2" style="color: white;"></i>
-                                support@shreejiwebex.com
-                            </p>
-                            <p class="d-flex align-items-center" style="color: white;">
-                                <i class="fa fa-clock me-2" style="color: white;"></i>
-                                24/7 Hours Service
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 d-flex">
-                    <div class="footer-item">
-                        <h4 class="mb-4" style="color: white;">Social Media</h4>
-                        <div class="row g-2">
-                            <div class="footer-icon d-flex">
-                                <a class="btn btn-sm-square me-2 rounded-circle d-flex align-items-center justify-content-center"
-                                    href="" style="background-color: white;"><i class="fab fa-twitter"></i></a>
-                                <a href="#"
-                                    class="btn btn-sm-square me-2 rounded-circle d-flex align-items-center justify-content-center"
-                                    style="background-color: white;"><i class="fab fa-instagram"></i></a>
-                                <a href="#"
-                                    class="btn btn-sm-square rounded-circle d-flex align-items-center justify-content-center"
-                                    style="background-color: white;"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-   
+    <special-footer></special-footer>
+    <script src="Componets.js"></script>
+
     <a href="#" class="btn btn-md-square rounded-circle back-to-top d-flex align-items-center justify-content-center"
         style="background-color: #35A7A0;"><i class="fa fa-arrow-up" style="color: white;" ;></i></a>
 

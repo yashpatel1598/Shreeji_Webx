@@ -7,842 +7,34 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playball&display=swap"
     rel="stylesheet">
-
-
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-
   <link href="lib/animate/animate.min.css" rel="stylesheet">
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
   <link href="lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
-
-
   <link href="css/bootstrap.min.css" rel="stylesheet">
-
-
   <link href="css/style.css" rel="stylesheet">
   <style>
-    .marketing-section {
-      display: flex;
-      flex-direction: column;
-      padding: 18px 0 31px;
-    }
-
-    .marketing-title {
-      color: rgba(0, 0, 0, 1);
-      text-align: center;
-      align-self: center;
-      margin-left: 36px;
-      width: 592px;
-      font: 600 40px Inter, sans-serif;
-    }
-
-    .content-wrapper {
-      background-color: rgba(53, 167, 160, 0.8);
-      margin-top: 68px;
-      width: 100%;
-      padding-left: 80px;
-    }
-
-    .content-container {
-      gap: 20px;
-      display: flex;
-    }
-
-    .text-column {
-      display: flex;
-      flex-direction: column;
-      line-height: normal;
-      width: 66%;
-      margin-left: 0;
-    }
-
-    .marketing-description {
-      color: rgba(255, 255, 255, 1);
-      z-index: 10;
-      margin-top: 41px;
-      font: 400 25px Inter, sans-serif;
-    }
-
-    .image-column {
-      display: flex;
-      flex-direction: column;
-      line-height: normal;
-      width: 34%;
-      margin-left: 20px;
-    }
-
-    .marketing-image {
-
-      object-fit: contain;
-      object-position: center;
-      width: 100%;
-      margin-top: -182px;
-    }
-
-    @media (max-width: 991px) {
-      .marketing-title {
-        max-width: 100%;
-      }
-
-      .content-wrapper {
-        max-width: 100%;
-        padding-left: 20px;
-        margin-top: 40px;
-      }
-
-      .content-container {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-      }
-
-      .text-column {
-        width: 100%;
-      }
-
-      .marketing-description {
-        max-width: 100%;
-        margin-top: 40px;
-      }
-
-      .image-column {
-        width: 100%;
-      }
-
-      .marketing-image {
-        max-width: 100%;
-        margin-top: -83px;
-      }
-    }
-
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    .visually-hidden {
-      clip: rect(0 0 0 0);
-      clip-path: inset(50%);
-      height: 1px;
-      overflow: hidden;
-      position: absolute;
-      white-space: nowrap;
-      width: 1px;
-    }
-
-    .section-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      max-width: 1311px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .category-tag {
-      display: flex;
-      align-items: center;
-      gap: 41px;
-      background: rgba(180, 216, 228, 1);
-      border: 2px solid rgba(53, 167, 160, 1);
-      border-radius: 51px;
-      padding: 29px 46px;
-      margin-bottom: 125px;
-    }
-
-    .category-indicator {
-      width: 17px;
-      height: 16px;
-      background: rgba(53, 167, 160, 1);
-      border-radius: 50%;
-    }
-
-    .category-label {
-      color: #fff;
-      font: 800 24px/1 "Inter", sans-serif;
-    }
-
-    .content-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 235px;
-      width: 100%;
-    }
-
-    .featured-image {
-      width: 786px;
-      height: 412px;
-      overflow: hidden;
-    }
-
-    .image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .content-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      width: 100%;
-    }
-
-    .content-row--reverse {
-      flex-direction: row-reverse;
-    }
-
-    .content-text {
-      width: 37%;
-      letter-spacing: 1px;
-      color: rgba(0, 0, 0, 1);
-      padding-top: 50px;
-      font: 20px/28px "Sanchez", serif;
-    }
-
-    .content-image-wrapper {
-      width: 63%;
-    }
-
-    @media (max-width: 991px) {
-      .section-wrapper {
-        padding: 15px;
-      }
-
-      .category-tag {
-        margin-bottom: 40px;
-        padding: 20px;
-        gap: 20px;
-        white-space: normal;
-      }
-
-      .content-grid {
-        gap: 40px;
-      }
-
-      .featured-image {
-        width: 100%;
-      }
-
-      .content-row,
-      .content-row--reverse {
-        flex-direction: column;
-        gap: 40px;
-      }
-
-      .content-text {
-        width: 100%;
-      }
-
-      .content-image-wrapper {
-        width: 100%;
-      }
-    }
-
     body {
       height: 100vh;
       margin: 0;
-
       cursor: none;
       overflow: auto;
-      
+
     }
 
-    .cursor-dot {
-      width: 8px;
-      height: 8px;
-      background-color: black;
-      border-radius: 50%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      
-      z-index: 1000;
-      transition: transform 0.1s ease-out;
-    }
-
-    .cursor-outline {
-      width: 30px;
-      height: 30px;
-      border: 2px solid hsla(0, 26%, 5%, 0.5);
-      border-radius: 50%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-     
-      z-index: 999;
-      transition: all 0.2s ease-out;
-    }
-     :root {
-    --primary-color: #35a7a0;
-    --text-dark: #000;
-    --text-light: #fff;
-    --font-primary: "Inter", sans-serif;
-    --font-secondary: "Raleway", sans-serif;
-    --font-accent: "Sanchez", serif;
-  }
-
-  .page-wrapper {
-    width: 100%;
-    min-height: 0vh;
-    background-color: var(--text-light);
-  }
-
-.header {
-    display: flex;
-    justify-content: flex-start; /* Align the logo to the left */
-    align-items: center;
-    padding: 0px 0px;
-    width: 100%;
-    background-color: #C8ECFA;
-    z-index: 10;
-}
-
-
-  
-.brand-logo {
-    width: 400px;
-    height: auto;
-    /* Remove the position styles to allow it to scroll with the page */
-    /* position: absolute;  <-- Remove this */
-    top: 10px;
-    left: 40px;
-}
-
-  .nav-menu {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-  }
-
-  .nav-link {
-    color: var(--primary-color);
-    text-transform: uppercase;
-    letter-spacing: 2.9px;
-    text-decoration: none;
-    font: 700 20px var(--font-primary);
-  }
-
-  .hero-section {
-    display: flex;
-    height: 100vh;
-  }
-
-  .hero-content {
-    flex: 1;
-    padding: 0px 100px 40px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .hero-text-wrapper {
-    margin-top: 80px;
-  }
-
-  .hero-preheading {
-    letter-spacing: 1.8px;
-    color: var(--text-dark);
-    margin-bottom: 20px;
-    font: 400 36px var(--font-secondary);
-  }
-
-  .hero-heading {
-    font-size: 45px;
-    font-weight: 700;
-    letter-spacing: 9.9px;
-    text-transform: uppercase;
-    line-height: 57px;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    margin-bottom: 40px;
-  }
-
-  .hero-heading-highlight {
-    font-family: var(--font-accent);
-    color: var(--primary-color);
-  }
-
-  .hero-subheading {
-    color: var(--primary-color);
-    margin-top: 40px;
-    font: 800 36px var(--font-primary);
-  }
-
-  .cta-button {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    border: 2px solid var(--primary-color);
-    border-radius: 54px;
-    padding: 23px 35px;
-    text-transform: uppercase;
-    letter-spacing: 2.01px;
-    width: fit-content;
-    margin-top: 40px;
-    cursor: pointer;
-    font: 700 14px var(--font-primary);
-  }
-
-
-
-/* Default sidebar styles (shown on larger screens) */
-.sidebar {
-    width: 300px;
-    background-color: var(--primary-color);
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
-    position: fixed; /* Initially fixed */
-    top: 0;
-    right: 0;
-    transition: transform 0.3s ease; /* Smooth transition for hiding/showing */
-}
-
-/* Hide sidebar when scrolling down */
-.sidebar.hide {
-    transform: translateX(100%); /* Move it off-screen */
-}
-
-/* Keep sidebar fixed on large screens */
-.sidebar.fixed {
-    position: fixed;
-}
-
-/* Sidebar Toggle Button (Small Screens) */
-.sidebar-toggle {
-    display: none;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: transparent;
-    color: black;
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1001;
-    border: none;
-    font-size: 24px;
-    transition: color 0.3s ease;
-}
-
-/* Mobile styles */
-@media (max-width: 991px) {
-    .sidebar {
-        transform: translateX(100%);
-        display: block;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .sidebar.open {
-        transform: translateX(0);
-    }
-}
-
-
-.sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 100px;
-}
-
-.sidebar-link {
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 2.9px;
-    text-decoration: none;
-}
-
-  @media (max-width: 991px) {
     .header {
-      padding: 20px;
-    }
-
-    .brand-logo {
-      position: relative;
-      top: 0;
-      left: 0;
-    }
-
-    .hero-section {
-      flex-direction: column;
-    }
-
-    .hero-preheading {
-      font-size: 30px;
-    }
-
-    .hero-heading {
-      font-size: 40px;
-      letter-spacing: 6px;
-      line-height: 50px;
-    }
-
-    .hero-subheading {
-      font-size: 30px;
-    }
-
-    .sidebar {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0px 0px;
       width: 100%;
-      height: auto;
-      padding: 20px;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .nav-menu {
-      display: none;
-    }
-
-
-    .hero-preheading {
-      font-size: 24px;
-    }
-
-    .hero-heading {
-      font-size: 32px;
-      letter-spacing: 4px;
-      line-height: 40px;
-    }
-
-    .hero-subheading {
-      font-size: 24px;
-    }
-
-    .cta-button {
-      width: 100%;
-      text-align: center;
-    }
-  }
-
-
-
-.hero-preheading,
-.hero-subheading,
-.hero-heading,
-.cta-button {
-    opacity: 1; /* Keep other elements static */
-}
-
-.hero-heading {
-    display: flex;
-    flex-direction: row;
-    font-size: 36px;
-}
-
-.hero-heading-highlight {
-    color: #ff6600; /* Highlight the "Empowering" text */
-    text-transform: uppercase; /* Ensure highlight is uppercase */
-}
-
-.typewriter-text {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 0;
-    border-right: 2px solid #000;
-    font-size: 36px;
-    text-transform: uppercase; /* Make the text uppercase */
-    animation: typing 4s steps(30) infinite, blink 0.75s step-end infinite;
-}
-
-.typewriter-text span {
-    display: inline-block;
-}
-
-.hero-subheading {
-    margin-top: 20px;
-    font-size: 24px;
-    font-weight: 500;
-}
-
-.cta-button {
-    margin-top: 30px;
-    padding: 12px 24px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #ff6600;
-    color: white;
-}
-
-@keyframes typing {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
-}
-
-.sidebar.hidden {
-    transform: translateX(100%); /* Hide sidebar when not in view */
-}
-
-
-
-
-
-.contact-us-wrapper {
-    display: flex;
-    justify-content: center; /* Center the circle horizontally */
-    align-items: center;
-    margin-top: 20px; /* Optional, to give space between the rows */
-}
-
-.contact-us-circle {
-    display: flex; /* Enable flexbox */
-    align-items: center; /* Vertically center text */
-    justify-content: center; /* Horizontally center text */
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-    color: #35A7A0;
-    border: 2px solid #35A7A0;
-    border-radius: 50%;
-    font-size: 14px; /* Adjusted font size for better fit */
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.contact-us-circle span {
-    display: block;
-    font-size: 12px; /* Adjust font size as needed */
-}
-
-.contact-us-circle:hover {
-    background-color: #35A7A0;
-    color: #fff;
-    transform: scale(1.1);  /* Slowly grow the size */
-}
-
-.contact-us-circle:hover span {
-    color: #fff; /* Change text color on hover */
-}
-
-
-/* Container for both columns */
-.container-contact {
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    padding: 20px;
-    width: 100%; /* Ensure it takes up full width */
-}
-
-/* Left Column */
-.left-column-contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: flex-start; /* Align text to the left */
-    margin-right: 300px; /* Small gap between text and circle */
-}
-
-/* Right Column */
-.right-column-contact {
-    display: flex;
-    justify-content: center; /* Center the circle horizontally */
-    align-items: center; /* Center the circle vertically */
-    margin-left: 0; /* Ensure no margin to the left */
-}
-
-/* Media Query for Smaller Screens */
-@media (max-width: 768px) {
-    .container-contact {
-        flex-direction: column; /* Stack columns vertically on small screens */
-        justify-content: center; /* Ensure both elements are still centered */
-        align-items: center; /* Center both elements */
-    }
-
-    .left-column-contact,
-    .right-column-contact {
-        margin-right: 0; /* Remove margin to make sure there is no extra space */
-        margin-bottom: 10px; /* Add space between the text and circle */
-    }
-
-    .left-column-contact {
-        text-align: center; /* Center the text horizontally on small screens */
-    }
-
-    .right-column-contact {
-        margin-top: 10px; /* Optional: Add margin between text and circle when stacked */
-    }
-}
-
-
-
-.faq-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.faq-content {
-    display: flex;
-    width: 80%;
-    max-width: 1200px;
-    background-color: #fff;
-   
-    padding: 20px;
-    justify-items: center;
-    justify-content: center;
-    border-radius: 10px;
-}
-
-/* Left Side */
-.left-side {
-    flex: 1;
-    padding: 20px;
-   
-    animation: slideInLeft 1s ease-in-out;
-}
-
-.left-side h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    
-}
-
-.left-side p {
-    font-size: 1.2em;
-    color: #666;
-}
-
-/* Right Side (FAQ Questions) */
-.right-side {
-    padding: 20px;
-    margin-left: 20px; /* Adds space between the left and right side */
-    flex: 2; /* Takes up more space than the left side */
-}
-
-/* FAQ Item Styling */
-.faq-item {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.faq-question {
-    font-size: 1.2em;
-    padding: 10px;
-    cursor: pointer;
-    position: relative;
-    transition: background-color 0.3s ease;
-}
-
-.faq-question:hover {
-    background-color: #f9f9f9;
-}
-
-.faq-question::after {
-    content: '+';
-    position: absolute;
-    right: 10px;
-    transition: transform 0.3s ease;
-}
-
-.faq-question.active::after {
-    content: '-';
-    transform: rotate(180deg);
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    padding: 0 10px;
-}
-
-.faq-answer.open {
-    max-height: 200px;
-    padding: 10px;
-}
-
-
-
-/* Media Query for Small Screens (Responsive Design) */
-@media (max-width: 768px) {
-    .faq-content {
-        flex-direction: column; /* Stack the sections vertically */
-        padding: 10px;
-    }
-
-    .left-side {
-        text-align: center;
-        margin-bottom: 20px; /* Space between left side and FAQ section */
-    }
-
-    .right-side {
-        margin-left: 0; /* Remove the margin between the sections */
-        margin-top: 20px; /* Add space above the FAQ section */
-        padding: 10px;
-    }
-
-    .faq-question {
-        font-size: 1.1em; /* Slightly smaller font size on mobile */
-    }
-
-    .faq-answer {
-        font-size: 1em; /* Adjust font size for better readability on mobile */
-    }
-}
-
-
-.sub-services {
-        display: none; /* Initially hidden */
-        padding-left: 15px;
-        background-color: #35A7A0; /* White background when expanded */
-        padding: 5px;
-        border-radius: 5px;
-    }
-
-    .sidebar-sub-link {
-        display: flex; /* Flexbox for proper alignment */
-        align-items: center;
-        color: white; /* Text color inside sub-menu */
-        padding: 5px 0;
-        text-decoration: none;
-    }
-
-    .plus {
-        margin-right: 8px; /* Space between "+" and text */
-        font-weight: bold;
-        color: white;
-    }
-
-    .sidebar-sub-link:hover {
-        text-decoration: underline;
+      background-color: #C8ECFA;
+      z-index: 10;
     }
   </style>
 </head>
@@ -859,151 +51,150 @@
       const posY = e.clientY;
       cursorDot.style.left = `${posX}px`;
       cursorDot.style.top = `${posY}px`;
-
-      
       cursorOutline.style.left = `${posX}px`;
       cursorOutline.style.top = `${posY}px`;
     });
   </script>
- 
+
   <div id="spinner"
     class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
     <div class="spinner-grow text-primary" role="status"></div>
   </div>
-  
-
-  
-<div class="page-wrapper">
-  <header class="header">
-    <img
-      src="https://cdn.builder.io/api/v1/image/assets/TEMP/59056c651bf7266f0b5cee6140203da080f2a9d7cd966f598163ac1c42193d77?apiKey=c1ecf55aff194658951953bc763cb953&"
-      alt="Shreeji Webex Logo" class="brand-logo">
 
 
-  </header>
 
-  <main class="">
+  <div class="page-wrapper">
+    <header class="header">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/59056c651bf7266f0b5cee6140203da080f2a9d7cd966f598163ac1c42193d77?apiKey=c1ecf55aff194658951953bc763cb953&"
+        alt="Shreeji Webex Logo" class="brand-logo">
 
-    <div class="hero-content">
-      <div class="hero-text-wrapper">
-      <div class="container-fluid  py-6 my-6 mt-0" >
-        <div class="container text-center animated bounceInDown">
-          <h1 class="display-1 mb-4">E-Commerce Digital Marketing </h1>
-          <ol class="breadcrumb justify-content-center mb-0 animated bounceInDown">
-            <li class="breadcrumb-item"><a href="#" style="color: #35A7A0;">Home</a></li>
-            <li class="breadcrumb-item"><a href="#" style="color: #35A7A0;">Services</a></li>
-            <li class="breadcrumb-item text-dark" aria-current="page">E-Commerce Digital Marketing</li>
-          </ol>
+
+    </header>
+
+    <main class="">
+
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <div class="container-fluid  py-6 my-6 mt-0">
+            <div class="container text-center animated bounceInDown">
+              <h1 class="display-1 mb-4">E-Commerce Digital Marketing </h1>
+              <ol class="breadcrumb justify-content-center mb-0 animated bounceInDown">
+                <li class="breadcrumb-item"><a href="#" style="color: #35A7A0;">Home</a></li>
+                <li class="breadcrumb-item"><a href="#" style="color: #35A7A0;">Services</a></li>
+                <li class="breadcrumb-item text-dark" aria-current="page">E-Commerce Digital Marketing</li>
+              </ol>
+            </div>
+          </div>
         </div>
       </div>
-      </div>
-    </div>
 
-    <aside class="sidebar">
-     <nav class="sidebar-nav" role="navigation" aria-label="Secondary navigation">
-      <!-- Home link -->
-      <a href="index.html" class="sidebar-link">Home</a>
-    
-      <!-- Services Section (Expandable) -->
-      <div class="nav-item">
-        <a href="#" class="sidebar-link" id="servicesToggle">Services</a>
-        <div class="sub-services" id="servicesDropdown">
-          <a href="Digital_marketing.html" class="sidebar-sub-link"><span class="plus">+</span> Digital Marketing</a>
-          <a href="landingpage.html" class="sidebar-sub-link"><span class="plus">+</span> Website Landing Page</a>
-          <a href="Social_media_management.html" class="sidebar-sub-link"><span class="plus">+</span> Social Media
-            Management</a>
-          <a href="SEO.html" class="sidebar-sub-link"><span class="plus">+</span> SEO</a>
-          <a href="E-Commerce.html" class="sidebar-sub-link"><span class="plus">+</span> E-Commerce Digital
-            Marketing</a>
-        </div>
-      </div>
-    
-      <!-- Meeting Booking link -->
-      <a href="book.html" class="sidebar-link active">Meeting Booking</a>
-    
-      <!-- Contact link -->
-      <a href="contact.html" class="sidebar-link">Contact</a>
-    </nav>
-    
-    <script>
-      document.getElementById("servicesToggle").addEventListener("click", function (event) {
-        event.preventDefault(); // Prevents jumping to top
-        var dropdown = document.getElementById("servicesDropdown");
-        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-      });
-    </script>
+      <aside class="sidebar">
+        <nav class="sidebar-nav" role="navigation" aria-label="Secondary navigation">
 
-    </aside>
-  </main>
-</div>
+          <a href="index.html" class="sidebar-link">Home</a>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const sidebar = document.querySelector(".sidebar");
-    const sidebarToggle = document.createElement("button"); // Create the toggle button
-    sidebarToggle.textContent = "☰"; // Hamburger icon
-    sidebarToggle.classList.add("sidebar-toggle");
-    document.body.appendChild(sidebarToggle); // Append the button to the body
 
-    let lastScrollTop = 0;
+          <div class="nav-item">
+            <a href="#" class="sidebar-link" id="servicesToggle">Services</a>
+            <div class="sub-services" id="servicesDropdown">
+              <a href="Digital_marketing.html" class="sidebar-sub-link"><span class="plus">+</span> Digital
+                Marketing</a>
+              <a href="landingpage.html" class="sidebar-sub-link"><span class="plus">+</span> Website Landing Page</a>
+              <a href="Social_media_management.html" class="sidebar-sub-link"><span class="plus">+</span> Social Media
+                Management</a>
+              <a href="SEO.html" class="sidebar-sub-link"><span class="plus">+</span> SEO</a>
+              <a href="E-Commerce.html" class="sidebar-sub-link"><span class="plus">+</span> E-Commerce Digital
+                Marketing</a>
+            </div>
+          </div>
 
-    // Function to check screen size and display sidebar toggle
-    function checkScreenSize() {
-      if (window.innerWidth <= 991) {
-        sidebar.classList.remove("fixed");
-        sidebarToggle.style.display = "block"; // Show toggle button
-      } else {
-        sidebar.classList.add("fixed");
-        sidebarToggle.style.display = "none"; // Hide toggle button on larger screens
-      }
-    }
 
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
+          <a href="book.html" class="sidebar-link active">Meeting Booking</a>
 
-    // Function to handle scroll behavior
-    window.addEventListener("scroll", function () {
-      let scrollTop = window.scrollY;
-      let heroRect = document.querySelector(".hero-content").getBoundingClientRect();
 
-      // Prevent sidebar show/hide behavior based on scroll on small screens
-      if (window.innerWidth > 991) {
-        if (heroRect.top >= 0 && heroRect.bottom <= window.innerHeight) {
-          // Hero section is visible, show sidebar
-          sidebar.classList.add("fixed");
-          sidebar.classList.remove("hidden");
+          <a href="contact.html" class="sidebar-link">Contact</a>
+        </nav>
+
+        <script>
+          document.getElementById("servicesToggle").addEventListener("click", function (event) {
+            event.preventDefault();
+            var dropdown = document.getElementById("servicesDropdown");
+            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+          });
+        </script>
+
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sidebar = document.querySelector(".sidebar");
+      const sidebarToggle = document.createElement("button");
+      sidebarToggle.textContent = "☰";
+      sidebarToggle.classList.add("sidebar-toggle");
+      document.body.appendChild(sidebarToggle);
+
+      let lastScrollTop = 0;
+
+
+      function checkScreenSize() {
+        if (window.innerWidth <= 991) {
+          sidebar.classList.remove("fixed");
+          sidebarToggle.style.display = "block";
         } else {
-          // Hero section is not visible, handle scroll direction
-          if (scrollTop > lastScrollTop) {
-            // Scrolling down, hide sidebar
-            sidebar.classList.add("hidden");
+          sidebar.classList.add("fixed");
+          sidebarToggle.style.display = "none";
+        }
+      }
+
+      checkScreenSize();
+      window.addEventListener("resize", checkScreenSize);
+
+
+      window.addEventListener("scroll", function () {
+        let scrollTop = window.scrollY;
+        let heroRect = document.querySelector(".hero-content").getBoundingClientRect();
+
+
+        if (window.innerWidth > 991) {
+          if (heroRect.top >= 0 && heroRect.bottom <= window.innerHeight) {
+
+            sidebar.classList.add("fixed");
+            sidebar.classList.remove("hidden");
           } else {
-            // Scrolling up, show sidebar when hero section is back in view
-            if (heroRect.top >= 0) {
-              sidebar.classList.remove("hidden");
+
+            if (scrollTop > lastScrollTop) {
+
+              sidebar.classList.add("hidden");
+            } else {
+
+              if (heroRect.top >= 0) {
+                sidebar.classList.remove("hidden");
+              }
             }
           }
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scroll value
-      }
+      });
+
+
+      sidebarToggle.addEventListener("click", function () {
+        sidebar.classList.toggle("open");
+      });
     });
 
-    // Toggle sidebar visibility on mobile screens (if sidebar is hidden or shown)
-    sidebarToggle.addEventListener("click", function () {
-      sidebar.classList.toggle("open");
-    });
-  });
+
+
+  </script>
 
 
 
-</script>
-  
 
-  
-  
   <div class="marketing-section">
     <h1 class="marketing-title">We provide E-Commerce Digital Marketing</h1>
-    <div class="content-wrapper">
+    <div class="content-wrapper" style="background-color: #35A7A0;">
       <div class="content-container">
         <div class="text-column">
           <p class="marketing-description">
@@ -1060,193 +251,121 @@
       </div>
     </div>
   </div>
-  
 
 
-<div class="text-center  wow bounceInUp" style="margin-top: 50px;" data-wow-delay="0.1s">
-  <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border rounded-pill px-4 py-1 mb-3"
-    style="border-color: #35A7A0;">Contact Us</small>
-</div>
 
-<div class="container-contact">
-  <!-- Left Column -->
+  <special-contactus></special-contactus>
 
-  <div class="left-column-contact wow bounceInUp" data-wow-delay="0.1s">
-    <h2 style="font-size: 40px;">Have a project in mind?</h2>
-    <h3 style="font-size: 20px;"> Let’s get to work</h3>
-  </div>
 
-  <!-- Right Column -->
-  <div class="right-column-contact">
-    <div class="contact-us-wrapper">
-    <a href="contact.html"> <!-- Link to index.html -->
-      <div class="contact-us-circle wow bounceInUp" data-wow-delay="0.1s">
-        <span>Contact Us</span>
+  <h5 style="text-align: center; padding: 10% 30% 0px 30%;">Explore Corenet Tech’s FAQ on consulting, development,
+    marketing, and more. Unravel the mysteries of IT and make your
+    journey fast-forward.</h5>
+
+  <div class="faq-container">
+
+    <div class="faq-content">
+
+      <div class="left-side wow bounceInUp" data-wow-delay="0.1s">
+        <div class="text-center  wow bounceInUp" style="margin-top: 50px;" data-wow-delay="0.1s">
+          <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border rounded-pill px-4 py-1 mb-3"
+            style="border-color: #35A7A0;">FAQs</small>
+        </div>
+
+        <h1>Fast-Track Help</h1>
+        <h1>Desk</h1>
       </div>
-    </a>
-    </div>
-  </div>
-</div>
-
-
-
-
-<h5 style="text-align: center; padding: 10% 30% 0px 30%;">Explore Corenet Tech’s FAQ on consulting, development,
-  marketing, and more. Unravel the mysteries of IT and make your
-  journey fast-forward.</h5>
-
-<div class="faq-container">
-
-  <div class="faq-content">
-
-    <div class="left-side wow bounceInUp" data-wow-delay="0.1s">
-      <div class="text-center  wow bounceInUp" style="margin-top: 50px;" data-wow-delay="0.1s">
-        <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border rounded-pill px-4 py-1 mb-3"
-          style="border-color: #35A7A0;">FAQs</small>
-      </div>
-
-      <h1>Fast-Track Help</h1>
-      <h1>Desk</h1>
-    </div>
-    <div class="right-side wow bounceInUp" data-wow-delay="0.1s">
-      <div class="faq-item ">
-        <div class="faq-question">What is e-commerce digital marketing?</div>
-        <div class="faq-answer">E-commerce digital marketing refers to the use of online marketing strategies and tactics to promote and sell products
-        or services through an e-commerce website. This includes various activities like search engine optimization (SEO),
-        social media marketing, email marketing, paid advertising, content marketing, and influencer collaborations.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How can digital marketing boost my e-commerce sales?</div>
-        <div class="faq-answer">Digital marketing can boost e-commerce sales by driving targeted traffic to your website and turning those visitors into
-        paying customers. Strategies like SEO can help your products rank higher in search engine results, while social media
-        marketing can increase brand awareness and engage potential customers.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How do social media platforms help e-commerce businesses?</div>
-        <div class="faq-answer">Social media platforms play a crucial role in e-commerce digital marketing by providing businesses with a way to engage
-        with potential customers, build brand loyalty, and drive traffic to their online store. Platforms like Instagram,
-        Facebook, and TikTok allow businesses to showcase products, run targeted ads, and interact directly with their audience.
-        Social media is also an excellent tool for influencer marketing, where businesses collaborate with influencers to
-        promote their products to a broader audience.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What role does email marketing play in e-commerce?</div>
-        <div class="faq-answer">Email marketing plays a vital role in e-commerce by enabling businesses to nurture leads, build relationships with
-        customers, and encourage repeat purchases. With email campaigns, you can send personalized promotions, product
-        recommendations, and special offers to subscribers, which can help increase conversions and customer loyalty.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How do I measure the effectiveness of my e-commerce digital marketing campaigns?</div>
-        <div class="faq-answer">The effectiveness of your e-commerce digital marketing campaigns can be measured using several key performance
-        indicators (KPIs). Common metrics include conversion rate, which measures the percentage of visitors who make a
-        purchase, and traffic sources, which show where your website visitors are coming from (e.g., organic search, paid ads,
-        social media). Return on Investment (ROI) is another important metric to assess the profitability of your campaigns</div>
+      <div class="right-side wow bounceInUp" data-wow-delay="0.1s">
+        <div class="faq-item ">
+          <div class="faq-question">What is e-commerce digital marketing?</div>
+          <div class="faq-answer">E-commerce digital marketing refers to the use of online marketing strategies and
+            tactics to promote and sell products
+            or services through an e-commerce website. This includes various activities like search engine optimization
+            (SEO),
+            social media marketing, email marketing, paid advertising, content marketing, and influencer collaborations.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How can digital marketing boost my e-commerce sales?</div>
+          <div class="faq-answer">Digital marketing can boost e-commerce sales by driving targeted traffic to your
+            website and turning those visitors into
+            paying customers. Strategies like SEO can help your products rank higher in search engine results, while
+            social media
+            marketing can increase brand awareness and engage potential customers.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do social media platforms help e-commerce businesses?</div>
+          <div class="faq-answer">Social media platforms play a crucial role in e-commerce digital marketing by
+            providing businesses with a way to engage
+            with potential customers, build brand loyalty, and drive traffic to their online store. Platforms like
+            Instagram,
+            Facebook, and TikTok allow businesses to showcase products, run targeted ads, and interact directly with
+            their audience.
+            Social media is also an excellent tool for influencer marketing, where businesses collaborate with
+            influencers to
+            promote their products to a broader audience.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What role does email marketing play in e-commerce?</div>
+          <div class="faq-answer">Email marketing plays a vital role in e-commerce by enabling businesses to nurture
+            leads, build relationships with
+            customers, and encourage repeat purchases. With email campaigns, you can send personalized promotions,
+            product
+            recommendations, and special offers to subscribers, which can help increase conversions and customer
+            loyalty.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do I measure the effectiveness of my e-commerce digital marketing campaigns?
+          </div>
+          <div class="faq-answer">The effectiveness of your e-commerce digital marketing campaigns can be measured using
+            several key performance
+            indicators (KPIs). Common metrics include conversion rate, which measures the percentage of visitors who
+            make a
+            purchase, and traffic sources, which show where your website visitors are coming from (e.g., organic search,
+            paid ads,
+            social media). Return on Investment (ROI) is another important metric to assess the profitability of your
+            campaigns</div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const faqQuestions = document.querySelectorAll('.faq-question');
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const faqQuestions = document.querySelectorAll('.faq-question');
 
-    faqQuestions.forEach(question => {
-      question.addEventListener('click', function () {
-        const answer = this.nextElementSibling;
-        const isOpen = answer.classList.contains('open');
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', function () {
+          const answer = this.nextElementSibling;
+          const isOpen = answer.classList.contains('open');
 
-        // Close all answers
-        document.querySelectorAll('.faq-answer').forEach(ans => {
-          ans.classList.remove('open');
+
+          document.querySelectorAll('.faq-answer').forEach(ans => {
+            ans.classList.remove('open');
+          });
+
+
+          document.querySelectorAll('.faq-question').forEach(q => {
+            q.classList.remove('active');
+          });
+
+
+          if (!isOpen) {
+            answer.classList.add('open');
+            this.classList.add('active');
+          }
         });
-
-        // Remove active class from all questions
-        document.querySelectorAll('.faq-question').forEach(q => {
-          q.classList.remove('active');
-        });
-
-        // Toggle the clicked question
-        if (!isOpen) {
-          answer.classList.add('open');
-          this.classList.add('active');
-        }
       });
     });
-  });
-</script>
+  </script>
 
 
-<div class="container-fluid footer py-5 my-6 mb-0 wow bounceInUp" data-wow-delay="0.1s"
-  style="background-color: #35A7A0;">
-  <div class="container">
-    <div class="row d-flex justify-content-between">
-      <div class="col-lg-3 col-md-6 d-flex">
-        <div class="footer-item">
-          <h4 class="" style="color: white; text-transform: uppercase; letter-spacing: 5px;">Shreeji<span
-              class="text-dark">webEx</span></h4>
-          <p class="lh-lg mb-4" style="color: white;">Welcome to shreeji webex, your trusted partner in
-            navigating the digital landscape. We are a full-service digital marketing agency dedicated to
-            driving growth and success for businesses of all sizes.</p>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-6 d-flex">
-        <div class="footer-item">
-          <h4 class="mb-4" style="color: white;">Service</h4>
-          <div class="d-flex flex-column align-items-start">
-            <a class="mb-3" href="index.html" style="color: white;"><i class="fa fa-check me-2"
-                style="color: white;"></i>Home</a>
-            <a class="mb-3" href="Digital_marketing.html" style="color: white;"><i class="fa fa-check me-2"
-                style="color: white;"></i>Service</a>
-            <a class="mb-3" href="book.html" style="color: white;"><i class="fa fa-check me-2"
-                style="color: white;"></i>Meeting Booking</a>
-            <a class="mb-3" href="contact.html" style="color: white;"><i class="fa fa-check me-2"
-                style="color: white;"></i>Contact Us</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-6 d-flex">
-        <div class="footer-item">
-          <h4 class="mb-4" style="color: white;">Contact Us</h4>
-          <div class="d-flex flex-column align-items-start">
-            <p class="d-flex align-items-center" style="color: white;">
-              <i class="fa fa-map-marker-alt me-2" style="color: white;"></i>
-              30-31 Gokul park-3, Utarn, Surat, Gujarat -394105
-            </p>
-            <p class="d-flex align-items-center" style="color: white;">
-              <i class="fa fa-phone-alt me-2" style="color: white;"></i>
-              +91 9512890864
-            </p>
-            <p class="d-flex align-items-center" style="color: white;">
-              <i class="fas fa-envelope me-2" style="color: white;"></i>
-              support@shreejiwebex.com
-            </p>
-            <p class="d-flex align-items-center" style="color: white;">
-              <i class="fa fa-clock me-2" style="color: white;"></i>
-              24/7 Hours Service
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-4 d-flex">
-        <div class="footer-item">
-          <h4 class="mb-4" style="color: white;">Social Media</h4>
-          <div class="row g-2">
-            <div class="footer-icon d-flex">
-              <a class="btn btn-sm-square me-2 rounded-circle d-flex align-items-center justify-content-center" href=""
-                style="background-color: white;"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="btn btn-sm-square me-2 rounded-circle d-flex align-items-center justify-content-center"
-                style="background-color: white;"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="btn btn-sm-square rounded-circle d-flex align-items-center justify-content-center"
-                style="background-color: white;"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<a href="#" class="btn btn-md-square rounded-circle back-to-top d-flex align-items-center justify-content-center"
-  style="background-color: #35A7A0;"><i class="fa fa-arrow-up" style="color: white;" ;></i></a>
+  <special-footer></special-footer>
+  <script src="Componets.js"></script>
+
+
+
+  <a href="#" class="btn btn-md-square rounded-circle back-to-top d-flex align-items-center justify-content-center"
+    style="background-color: #35A7A0;"><i class="fa fa-arrow-up" style="color: white;" ;></i></a>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
