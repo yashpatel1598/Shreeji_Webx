@@ -1630,6 +1630,34 @@
         font-size: 30px;
     }
 
+
+          /* Ensure the text and images are centered */
+          .hero-text-wrapper {
+              margin-bottom: 20px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+          }
+    
+          .hero-image-wrapper {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-top: 20px;
+              /* Add margin to separate text and image */
+          }
+    
+          /* Ensure the image is responsive */
+          .hero-image,
+          .hero-image-left {
+              max-width: 100%;
+              height: auto;
+          }
+    
+          .empowering-text {
+              font-size: 2rem;
+          }
     .hero-heading {
         font-size: 40px;
         letter-spacing: 6px;
@@ -1639,7 +1667,23 @@
     .hero-subheading {
         font-size: 30px;
     }
-
+    
+         /* For centering img/Group 27.png in the second slide */
+         .hero-content .row.align-items-center {
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+         }
+    
+         .hero-content .col-md-6 {
+             width: 100%;
+             /* Ensure it's 100% width on smaller screens */
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             margin-bottom: 20px;
+         }
     .sidebar {
         width: 100%;
         height: auto;
@@ -1667,10 +1711,16 @@
         font-size: 24px;
     }
 
-    .cta-button {
-        width: 100%;
-        text-align: center;
+  .cta-button {
+        width: 100%; /* Make the button take up the full width */
+        text-align: center; /* Center the button text */
+        margin-top: 20px; /* Add margin to space it out from the text */
     }
+
+        .hero-image-left {
+            max-width: 100%;
+            height: auto;
+        }
 }
 
 

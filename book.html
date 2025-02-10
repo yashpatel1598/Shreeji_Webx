@@ -50,6 +50,8 @@
 
 
 
+        
+
      
     </style>
 </head>
@@ -205,107 +207,142 @@
 
     </script>
 
-
-
     <div class="container-fluid contact py-6 wow bounceInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="row g-0">
-
                 <div class="col-12">
-                    <div class="border-bottom border-top border-primary  py-5 px-4">
+                    <div class="border-bottom border-top border-primary py-5 px-4">
                         <div class="text-center">
                             <small
                                 class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Book
                                 Us</small>
-                            <h1 class="display-5 mb-5">Where you want Our Services</h1>
+                            <h1 class="display-5 mb-5">Where do you want Our Services?</h1>
                         </div>
                         <div class="row g-4 form">
                             <div class="col-lg-4 col-md-6">
-                                <select class="form-select border-primary p-2" aria-label="Select State">
+                                <select id="state" class="form-select border-primary p-2" aria-label="Select State">
                                     <option selected>Select State</option>
                                     <option value="1">Andhra Pradesh</option>
                                     <option value="2">Arunachal Pradesh</option>
-                                    <option value="3">Assam</option>
-                                    <option value="4">Bihar</option>
-                                    <option value="5">Chhattisgarh</option>
-                                    <option value="6">Goa</option>
-                                    <option value="7">Gujarat</option>
-                                    <option value="8">Haryana</option>
-                                    <option value="9">Himachal Pradesh</option>
-                                    <option value="10">Jharkhand</option>
-                                    <option value="11">Karnataka</option>
-                                    <option value="12">Kerala</option>
-                                    <option value="13">Madhya Pradesh</option>
-                                    <option value="14">Maharashtra</option>
-                                    <option value="15">Manipur</option>
-                                    <option value="16">Meghalaya</option>
-                                    <option value="17">Mizoram</option>
-                                    <option value="18">Nagaland</option>
-                                    <option value="19">Odisha</option>
-                                    <option value="20">Punjab</option>
-                                    <option value="21">Rajasthan</option>
-                                    <option value="22">Sikkim</option>
-                                    <option value="23">Tamil Nadu</option>
-                                    <option value="24">Telangana</option>
-                                    <option value="25">Tripura</option>
-                                    <option value="26">Uttar Pradesh</option>
-                                    <option value="27">Uttarakhand</option>
-                                    <option value="28">West Bengal</option>
-                                    <option value="29">Andaman and Nicobar Islands</option>
-                                    <option value="30">Chandigarh</option>
-                                    <option value="31">Dadra and Nagar Haveli and Daman and Diu</option>
-                                    <option value="32">Lakshadweep</option>
-                                    <option value="33">Delhi</option>
-                                    <option value="34">Puducherry</option>
+                                    <!-- Add more states as required -->
                                 </select>
                             </div>
-
                             <div class="col-lg-4 col-md-6">
-                                <input type="city" class="form-control border-primary p-2" placeholder="Enter City">
+                                <input type="text" id="city" class="form-control border-primary p-2"
+                                    placeholder="Enter City">
                             </div>
                             <div class="col-lg-4 col-md-6">
-                                <select class="form-select border-primary p-2" aria-label="Default select example">
-                                    <option selected>Select Palace</option>
-                                    <option value="1">Depend On Country</option>
-                                    <option value="2">UK</option>
-                                    <option value="3">India</option>
-                                </select>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6">
-                                <select class="form-select border-primary p-2" aria-label="Default select example">
-                                    <option selected>No. Of Palace</option>
-                                    <option value="1">100-200</option>
-                                    <option value="2">300-400</option>
-                                    <option value="3">500-600</option>
-                                    <option value="4">700-800</option>
-                                    <option value="5">900-1000</option>
-                                    <option value="6">1000+</option>
-                                </select>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6">
-                                <input type="mobile" class="form-control border-primary p-2"
-                                    placeholder="Your Contact No.">
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <input type="date" class="form-control border-primary p-2" placeholder="Select Date">
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <input type="email" class="form-control border-primary p-2"
+                                <input type="email" id="email" class="form-control border-primary p-2"
                                     placeholder="Enter Your Email">
                             </div>
+                            <div class="col-lg-4 col-md-6">
+                                <input type="datetime-local" id="dateTime" class="form-control border-primary p-2"
+                                    placeholder="Select Date and Time">
+                            </div>
                             <div class="col-12 text-center">
-                                <button type="submit" class="btn  px-5 py-3 rounded-pill"
+                                <button type="submit" id="submitBooking" class="btn px-5 py-3 rounded-pill"
                                     style="background-color: #35A7A0; color: white;">Submit Now</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
+    
+    <!-- JavaScript for Google Calendar Integration -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+        let apiKey = 'AIzaSyBlPAEng4_VBPvyI11nQbpvf2MfiEcZKYI'; // Replace with your actual API Key
+        let clientId = '110136939885-nidroilsv4ei4cf27fv7jfr6oo6tq9o5.apps.googleusercontent.com'; // Replace with your actual Client ID
+        let calendarId = 'primary'; // You can use 'primary' or a specific calendar ID
+
+        // Load the API client and auth2 library
+        function initClient() {
+            gapi.client.init({
+                apiKey: apiKey,
+                clientId: clientId,
+                scope: 'https://www.googleapis.com/auth/calendar.events',
+                discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest']
+            }).then(function () {
+                // Listen for sign-in state changes.
+                gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+                // Handle the initial sign-in state.
+                updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+            });
+        }
+
+        // Function to handle Google API authentication
+        function updateSigninStatus(isSignedIn) {
+            if (isSignedIn) {
+                document.getElementById('submitBooking').style.display = 'block';
+            } else {
+                gapi.auth2.getAuthInstance().signIn();
+            }
+        }
+
+        // Function to handle form submission and creating Google Calendar event
+        document.getElementById('submitBooking').addEventListener('click', function () {
+            let state = document.getElementById('state').value;
+            let city = document.getElementById('city').value;
+            let email = document.getElementById('email').value;
+            let dateTime = document.getElementById('dateTime').value;
+
+            if (state && city && email && dateTime) {
+                createCalendarEvent(state, city, email, dateTime);
+            } else {
+                alert("Please fill out all the fields.");
+            }
+        });
+
+        // Create a Google Calendar event
+        function createCalendarEvent(state, city, email, dateTime) {
+            let eventDetails = {
+                'summary': `Service Booking - ${state}, ${city}`,
+                'location': `${state}, ${city}`,
+                'description': `Booked by: ${email}`,
+                'start': {
+                    'dateTime': dateTime,
+                    'timeZone': 'America/New_York'
+                },
+                'end': {
+                    'dateTime': new Date(new Date(dateTime).getTime() + 60 * 60 * 1000), // 1 hour later
+                    'timeZone': 'America/New_York'
+                },
+                'attendees': [
+                    { 'email': email }
+                ],
+                'reminders': {
+                    'useDefault': true
+                }
+            };
+
+            let request = gapi.client.calendar.events.insert({
+                'calendarId': calendarId,
+                'resource': eventDetails
+            });
+
+            request.execute(function (event) {
+                alert('Event created successfully! Details sent to your email.');
+                sendEmailConfirmation(event.htmlLink, email);  // Send confirmation to email
+            });
+        }
+
+        // Send email confirmation using Google API (basic version)
+        function sendEmailConfirmation(meetingLink, email) {
+            let message = `Hi, your service meeting is scheduled. Click here to join: ${meetingLink}`;
+            let mailtoLink = `mailto:jenilkalariya2312@gmail.com?subject=Service Meeting Confirmation&body=${message}`;
+            window.location.href = mailtoLink;
+        }
+
+        // Load the API client library and initialize
+        gapi.load('client:auth2', initClient);
+    </script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <special-contactus></special-contactus>
 
