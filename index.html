@@ -757,21 +757,145 @@
             </div>
         </div>
     </main>
-    <script>
-        const horizontalContainer = document.querySelector('.horizontal-container');
-        const totalSections = document.querySelectorAll('.section').length;
-        let currentSection = 0;
+<script>
+    let currentSection = 0;
+    const horizontalContainer = document.querySelector(".horizontal-container");
+    const sections = document.querySelectorAll(".horizontal-container .section");
+    const totalSections = sections.length;
+    let isHorizontalScrolling = false;
+    let isScrollingLocked = false;
 
-        function autoScroll() {
-            currentSection = (currentSection + 1) % totalSections;
+    // Function to update scroll position
+    function updateScroll(delta) {
+        if (!isScrollingLocked) {
+            isScrollingLocked = true;
+
+            // Scroll right (next section) - scrolling down
+            if (delta > 0) {
+                if (currentSection < totalSections - 1) {
+                    currentSection++;
+                } else {
+                    // At the last section, allow vertical scrolling
+                    document.body.style.overflowY = "auto"; // Enable vertical scrolling
+                    isHorizontalScrolling = false; // Stop horizontal scrolling
+                }
+            }
+            // Scroll left (previous section) - scrolling up
+            else if (delta < 0) {
+                if (currentSection > 0) {
+                    currentSection--;
+                } else {
+                    // At the first section, allow vertical scrolling
+                    document.body.style.overflowY = "auto"; // Enable vertical scrolling
+                    isHorizontalScrolling = false; // Stop horizontal scrolling
+                }
+            }
+
+            // Apply transformation to scroll horizontally
             const translation = -currentSection * 100;
-            horizontalContainer.style.transition = 'transform 1s ease-out';
+            horizontalContainer.style.transition = "transform 1s ease-out";
             horizontalContainer.style.transform = `translateX(${translation}vw)`;
+
+            // Unlock scrolling after the transition is complete
+            setTimeout(() => {
+                isScrollingLocked = false;
+            }, 800);
         }
+    }
+
+    // Detecting scroll behavior
+    function handleScroll(e) {
+        if (isHorizontalScrolling) {
+            e.preventDefault();
+            updateScroll(e.deltaY);
+        }
+    }
+
+    // Hover detection to check if a section is in view
+    function handleHover() {
+        sections.forEach((section) => {
+            section.addEventListener("mouseenter", () => {
+                // Enable horizontal scrolling when hovering over any section
+                isHorizontalScrolling = true;
+                document.body.style.overflowY = "hidden"; // Disable vertical scrolling
+            });
+
+            section.addEventListener("mouseleave", () => {
+                // Disable horizontal scrolling when not hovering over any section
+                if (currentSection === totalSections - 1) {
+                    document.body.style.overflowY = "auto"; // Enable vertical scrolling for rest of page
+                } else {
+                    isHorizontalScrolling = false;
+                    document.body.style.overflowY = "auto"; // Enable vertical scrolling
+                }
+            });
+        });
+    }
+
+    // Apply the wheel event only inside the horizontal section
+    window.addEventListener(
+        "wheel",
+        (e) => {
+            if (isHorizontalScrolling) {
+                handleScroll(e);
+            }
+        },
+        { passive: false }
+    );
+
+    // Make responsive: Stack sections vertically on small screens
+    function adjustLayout() {
+        if (window.innerWidth <= 991) {
+            horizontalContainer.style.flexDirection = "column";
+            horizontalContainer.style.width = "100vw";
+            horizontalContainer.style.transform = "translateX(0)";
+            isHorizontalScrolling = false;
+            document.body.style.overflowY = "auto"; // Enable vertical scrolling
+        } else {
+            horizontalContainer.style.flexDirection = "row";
+            horizontalContainer.style.width = `${totalSections * 100}vw`;
+        }
+    }
+
+    // Initialize hover detection
+    handleHover();
+
+    // Adjust layout on load and resize
+    adjustLayout();
+    window.addEventListener("resize", adjustLayout);
+
+    // Reset horizontal scroll state after a page refresh
+    window.addEventListener("load", () => {
+        if (window.scrollY === 0) {
+            // Reset the state to allow horizontal scroll when returning to the horizontal section
+            isHorizontalScrolling = false;
+            document.body.style.overflowY = "auto";
+        }
+    });
+
+    // Handle edge cases for continuous scroll behavior
+    window.addEventListener(
+        "wheel",
+        function (e) {
+            if (isHorizontalScrolling) {
+                if (currentSection === 0 && e.deltaY < 0) {
+                    // When scrolling up on the first section, stop horizontal scrolling
+                    document.body.style.overflowY = "auto"; // Enable vertical scrolling
+                } else if (currentSection === totalSections - 1 && e.deltaY > 0) {
+                    // When scrolling down on the last section, stop horizontal scrolling
+                    document.body.style.overflowY = "auto"; // Enable vertical scrolling
+                    isHorizontalScrolling = false;
+                } else {
+                    // Keep scrolling horizontally when not at the boundaries
+                    document.body.style.overflowY = "hidden"; // Disable vertical scrolling
+                }
+            }
+        },
+        { passive: false }
+    );
+</script>
 
 
-        setInterval(autoScroll, 3000); 
-    </script>
 
 
     <div class="container-fluid py-5" style="margin-top: 90px;">
